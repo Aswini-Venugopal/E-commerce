@@ -12,27 +12,26 @@
 */
 
 Route::get('/', function () {
-    return view('auth.login');
+    return view('welcome');
 });
 
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
-Route::get('/signup','vendor_controll@signup');
-Route::get('/edit_profile','vendor_controll@edit_profile');
-Route::post('edit','vendor_controll@edit');
-Route::get('logout','vendor_controll@logout');
+// Route::get('/profile', 'MyController@profile');
 
-Route::get('/signin',function()
-{
-	return redirect('/');
+Route::get('/profile', function() {
+   return view('profile');
 });
 
-Route::get('register/verify/{token}','Auth\RegisterController@verify'); 
+Route::get('/edit_profile', function() {
+   return view('edit_profile');
+});
+Route::post('/edit','HomeController@edit');
+Route::get('/delete','HomeController@delete');
+Route::get('/logout','HomeController@logout')->name('logout');
+Route::get('/edit_profile', 'HomeController@countries')->name('countries');
 
-Route::get('/changePassword','HomeController@showChangePasswordForm');
-//Route::get('login', function () {
-  //  return view('auth.login');
-//Admin login ---------------------------------------
-Route::get('admin','admin@index');
-Route::get('adminhome','admin@vendor_detail');
+
+Route::get('/district','HomeController@district');
+
