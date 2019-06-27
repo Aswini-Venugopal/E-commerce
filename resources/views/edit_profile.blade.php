@@ -20,11 +20,7 @@
 <link rel="stylesheet" href="temp/css/style.css">
 <link rel="stylesheet" href="temp/css/color.css">
 <link rel="stylesheet" href="temp/css/responsive.css">
-<!-- <style type="text/css">
-	.drop{
-		overflow: scroll;
-	}
-</style> -->
+
 </head>
 <body>
 <!-- Start Page Loading -->
@@ -375,8 +371,9 @@
                         @if ($errors->has('reg_no'))
     					<div class="error">{{ $errors->first('reg_no') }}</div>
 						@endif
+                      </div>
 
-                      </div> 
+
                       <div class="col-md-6 col-sm-6 field">
                         <label>Your Name <span>*</span> </label>
                         <input value="<?php echo $user = Auth::user()->name;?>" type="text" name="name">
@@ -384,6 +381,8 @@
     					<div class="error">{{ $errors->first('name') }}</div>
 						@endif
                       </div>
+
+
                       <div class="col-md-12 col-sm-12 field">
                         <label>Contact Number<span>*</span> </label>
                         <input placeholder="" value="<?php echo Auth::user()->phone;?>" type="number" name="phone">
@@ -391,38 +390,42 @@
     					<div class="error">{{ $errors->first('phone') }}</div>
 						@endif
                       </div>
+
+
                       <div class="col-md-12 col-sm-12 field">
                         <label>Email id<span>*</span> </label>
-                        <input placeholder="" readonly="readonly" value="<?php echo Auth::user()->email;?>" type="text" name="email"><!-- @if ($errors->has('name'))
+                        <input placeholder="" readonly="readonly" value="<?php echo Auth::user()->email;?>" type="text" name="email"> @if ($errors->has('name'))
     					<div class="error">{{ $errors->first('name') }}</div>
-						@endif -->
-                      </div>
-                      
-                       <div class="col-md-6 col-sm-6 field">
-                        <label>Place <span>*</span> </label>
-                        <input placeholder="Enter Your Place" value="<?php echo $user = Auth::user()->place;?>" name="place" type="text">
-                        @if ($errors->has('place'))
-    					<div class="error">{{ $errors->first('place') }}</div>
-						@endif
-                      </div>
-                      
-                     <div class="col-md-6 col-sm-6 field">
-                        <label>District <span>*</span> </label>
-                        <input placeholder="Enter Your District" value="<?php echo $user = Auth::user()->district;?>" name="district" type="text">
-                        @if ($errors->has('district'))
-    					<div class="error">{{ $errors->first('district') }}</div>
-						@endif
+						@endif 
                       </div>
 
                       <div class="col-md-6 col-sm-12 field">
                         <label>State / Province <span>*</span> </label>
-                        
-                        	<input placeholder="Enter Your State" value="<?php echo $user = Auth::user()->state;?>" name="state" type="text">
-                        	
+                        	<select name="state">
+                          <option value="">Select Category</option>
+         					@foreach($state as $key => $value)
+         					<option value="{{$value->id}}">{{$value->name}}</option>
+         					@endforeach
+                        </select>
                         @if ($errors->has('state'))
     					<div class="error">{{ $errors->first('state') }}</div>
 						@endif
                       </div>
+
+
+
+                      <div>
+                        <label id="ddd" class="col-md-6 col-sm-12 field">District<span>*</span> </label>
+                        	<!-- <select name="district" id="ddd"></select> -->
+                              					
+                        
+                        @if ($errors->has('district'))
+    					<div class="error">{{ $errors->first('district') }}</div>
+						@endif
+                      </div>
+                      
+                      
+                      
 
                       <div class="col-md-6 col-sm-6 field">
                         <label>Country <span>*</span> </label>
@@ -455,6 +458,7 @@
     					<div class="error">{{ $errors->first('landmark') }}</div>
 						@endif
                       </div>
+
                       <div class="col-md-12 col-sm-12 field">
                         <label>Fax<span>*</span> </label>
                         <input placeholder="" value="<?php echo $user = Auth::user()->fax;?>" name="fax" type="number">
@@ -462,6 +466,7 @@
     					<div class="error">{{ $errors->first('fax') }}</div>
 						@endif
                       </div>
+
                       <div class="col-md-12 col-sm-12 field">
                         <label>Landline Number<span>*</span> </label>
                         <input placeholder="" value="<?php echo $user = Auth::user()->landline_number;?>" name="landline_number" type="number">
@@ -469,17 +474,29 @@
     					<div class="error">{{ $errors->first('landline_number') }}</div>
 						@endif
                       </div>
+
                       <div class="col-md-4 col-sm-12 field">
                         <label>Website URL <span>*</span> </label>
                         <input name="web_url" value="http://m.google.com/webinane" type="text">
+                        @if ($errors->has('web_url'))
+    					<div class="error">{{ $errors->first('web_url') }}</div>
+						@endif
                       </div>
+
                       <div class="col-md-4 col-sm-6 field">
                         <label>Add Facebook URL <span>*</span> </label>
                         <input name="fb_url" value="http://m.facebook.com/webinane" type="text">
+                        @if ($errors->has('fb_url'))
+    					<div class="error">{{ $errors->first('fb_url') }}</div>
+						@endif
                       </div>
+
                       <div class="col-md-4 col-sm-6 field">
                         <label>Add Instagram URL <span>*</span> </label>
                         <input name="insta_url" value="http://m.twitter.com/webinane" type="text">
+                        @if ($errors->has('insta_url'))
+    					<div class="error">{{ $errors->first('insta_url') }}</div>
+						@endif
                       </div> 
                       
                      
@@ -487,13 +504,21 @@
 							<span class="upload-image">upload logo</span>
 						  <label class="fileContainer"> <span>upload</span>
 							<input type="file" value="<?php echo $user = Auth::user()->logo;?>" name="logo">
+							
 						  </label>
+						  @if ($errors->has('logo'))
+    					<div class="error">{{ $errors->first('logo') }}Height and width should be 84.</div>
+						@endif
 						</div> 
 						<div class="col-md-12 col-sm-12 field"> 
 							<span class="upload-image">upload image</span>
 						  <label class="fileContainer"> <span>upload</span>
 							<input type="file" value="<?php echo $user = Auth::user()->image;?>" name="image">
+							
 						  </label>
+						  @if ($errors->has('image'))
+    					<div class="error" >{{ $errors->first('image') }}</div>
+						@endif
 						</div>  
 						
                       
@@ -518,7 +543,7 @@
 
   <div class="side-panel">
             <h4 class="panel-title">General Setting</h4>
-            <form method="post">
+            <form>
                 <div class="setting-row">
                     <span>use night mode</span>
                     <input type="checkbox" id="nightmode1"/> 
@@ -546,7 +571,7 @@
                 </div>
             </form>
             <h4 class="panel-title">Account Setting</h4>
-            <form method="post">
+            <form>
                 <div class="setting-row">
                     <span>Sub users</span>
                     <input type="checkbox" id="switch66" /> 
@@ -591,7 +616,53 @@
 <script src="temp/js/custom2.js"></script> 
 <script src="temp/js/flatweather.min.js"></script> 
 <script src="temp/js/html5lightbox.js"></script> 
-<script src="temp/js/custom.js"></script><!-- scripts -->
+<script src="temp/js/custom.js"></script>
+
+<script type="text/javascript">
+    $(document).ready(function() {
+    $('select[name="state"]').on('change', function() {
+        var state_id = $(this).val();
+         //alert(state_id);
+            
+            $.ajax({
+                 url: "{{ URL::route('district')}}",
+               
+                method: "get",
+                data: {'state_id': state_id  },
+                //dataType: "json",
+            success:function(data) {
+                	//alert(data);
+                	var data1 = JSON.parse(data); 
+                	//alert(data1);
+			var dist=$('#dist');
+
+				
+					$.each(data1, function(key, value){
+                	//alert(value.name) ;
+                	   // dist.append($("<option></option>")
+                    // .attr("value",value.name)
+                    // .text(value.name)); 
+                    var dist='<option value="'+value.id+'">'+value.name+'</option>';
+                    // alert(dist);
+                    $('#ddd').append(dist);
+
+                            });
+					//alert(dist);
+					
+					
+					
+                		
+                		// $.each(data1, function(index) {
+                			
+                		// 	$('select[name="districts"]').append('<option value="'+(data1[index].id)+'">'+(data1[index].name)+'</option>');
+                    	 
+                  //   });
+                }
+            });
+           
+           });
+        });
+    </script><!-- scripts -->
 
 </body>
 </html>
