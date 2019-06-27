@@ -4,6 +4,16 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
+use Illuminate\Support\Facades\Input;
+use Illuminate\Support\Facades\URL;
+use Illuminate\Support\Facades\File;
+use Illuminate\Support\Facades\DB; 
+use Illuminate\Support\Facades\Schema;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Database\Migrations\Migration;
+use Illuminate\Support\Facades\Validator;
+use Auth;
+
 class HomeController extends Controller
 {
     /**
@@ -21,16 +31,36 @@ class HomeController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+    public function countries()
+    {
+        $countryname = DB::table('countries')
+            ->get();
+            $statename = DB::table('states')->get();
+            $district = DB::table('districts')->get();
+             
+        return view('edit_profile')->with('country',$countryname)->with('state',$statename)->with('district',$district);
+        
+    }
+    public function district(){
+        // echo $get_id=$request->input('state_id');
+        echo "hello";
+         // return response()->json($get_id);
+    }
+
+    
+
     public function index()
     {
-        return view('profile');
+        return view('home');
     }
-     public function edit(Request $request)
+   
+
+    public function edit(Request $request)
     {
         $this->validate($request,[ 
             'reg_no' => 'required',          
             'name' => 'required',
-            'phone' => 'required',
+            'phone' => 'required|numeric|digits:10',
             'email' => 'required|email',             
             'place' => 'required', 
             'district' => 'required', 
@@ -38,8 +68,13 @@ class HomeController extends Controller
             'country' => 'required', 
             'pincode' => 'required',          
             'landmark' => 'required',
-            'fax' => 'required',  
-            'landline_number' => 'required',
+            'fax' => 'required|numeric|digits:10',  
+            'landline_number' => 'required|numeric|digits:10',
+            'web_url' => 'required',
+            'fb_url' => 'required',
+            'insta_url' => 'required',
+            'logo' => 'required| dimensions:width=84,height=84',
+            'image' => 'required',
 
              ]);
 
@@ -110,4 +145,26 @@ class HomeController extends Controller
                 return view('/profile');
                    
                 }
+public function logout(Request $request)
+{
+    // $this->guard()->logout();
+
+    $request->session()->flush();
+
+    $request->session()->regenerate();
+
+    return redirect('login');
+}
+// public function delete(Request $request)
+//     {
+//          $user_id = Auth::user()->id;
+
+//         DB::table('vendor_registration')->where('id', $user_id)->delete();
+       
+       
+//         return view('home');
+
+
+//     }
+    
 }
