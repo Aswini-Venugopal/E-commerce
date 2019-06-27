@@ -25,4 +25,89 @@ class HomeController extends Controller
     {
         return view('profile');
     }
+     public function edit(Request $request)
+    {
+        $this->validate($request,[ 
+            'reg_no' => 'required',          
+            'name' => 'required',
+            'phone' => 'required',
+            'email' => 'required|email',             
+            'place' => 'required', 
+            'district' => 'required', 
+            'state' => 'required', 
+            'country' => 'required', 
+            'pincode' => 'required',          
+            'landmark' => 'required',
+            'fax' => 'required',  
+            'landline_number' => 'required',
+
+             ]);
+
+              
+            $user_id = Auth::user()->id;
+            $updateDetails=array( 
+                                  'comp_reg_number'=>$request->input('reg_no'),
+                                    'name' => $request->input('name'),
+                                    'phone'=>$request->input('phone'),
+                                    'email' => $request->input('email'),
+                                    'place' => $request->input('place'),
+                                    'district' => $request->input('district'),
+                                    'state' => $request->input('state'),
+                                    'country' => $request->input('country'),
+                                    'pincode'=>$request->input('pincode'),
+                                    
+                                    'landmark'=>$request->input('landmark'),
+                                    'fax'=>$request->input('fax'),
+                                    'landline_number'=>$request->input('landline_number'),
+                                    'website'=>$request->input('web_url'),
+                                    'facebook_url'=>$request->input('fb_url'),
+                                    'instagram_url'=>$request->input('insta_url'),
+                                     'logo'=>$request->input('logo'),
+                                  'image'=>$request->input('image'),
+                                );
+
+                                   
+                    DB::table('vendor_registration')
+                        ->where('id', Auth::user()->id)
+                        ->update($updateDetails);
+
+                        if(Input::hasFile('image'))
+                {
+
+                    $file = Input::file('image');
+                    $file->move(public_path().'/image/',$file->getClientOriginalName());
+                    $url = URL::to("/").'/image/'.$file->getClientOriginalName();
+
+
+                    $updateDetails=array(
+                                    'image' => $url
+                                  );
+
+                     DB::table('vendor_registration')
+                        ->where('id', Auth::user()->id)
+                        ->update($updateDetails);
+
+                    //$vendor_registration->image = $url;
+                }
+                 if(Input::hasFile('logo'))
+                {
+
+                    $file = Input::file('logo');
+                    $file->move(public_path().'/image/',$file->getClientOriginalName());
+                    $url = URL::to("/").'/image/'.$file->getClientOriginalName();
+
+
+                    $updateDetails=array(
+                                    'logo' => $url
+                                  );
+
+                     DB::table('vendor_registration')
+                        ->where('id', Auth::user()->id)
+                        ->update($updateDetails);
+
+                    // $vendor_registration->image = $url;
+                }
+                return view('/profile');
+                   
+                }
 }
