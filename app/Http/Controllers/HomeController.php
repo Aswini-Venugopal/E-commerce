@@ -58,7 +58,10 @@ class HomeController extends Controller
 
     public function index()
     {
-        return view('home');
+      $vendor_id = Auth::user()->id;
+      $data=DB::table('vendor_subscription')->where('vendor_id',$vendor_id)->get();
+      return view('profile',['sub_data'=>$data]);
+        
     }
    
 
@@ -170,42 +173,55 @@ public function logout(Request $request)
     return redirect('login');
 }
 
+// public function subscribe(Request $request){
+//    $vendor_id = Auth::user()->id;
+
+//    echo $pack_name = $request->input('pack_name');
+//     echo   $pack_amnt = $request->input('pack_amount');
+//     $subscription_data=array( 
+//                                   'vendor_id'=>$vendor_id,
+//                                     'pack_name' => $pack_name,
+//                                      'pack_amount' => $pack_amnt);
+//     $data=DB::table('vendor_subscription')->insert($subscription_data);
+//     return view('profile',['sub_data'=>$data]);
+
+// }
+
 
 public function subscription(Request $request)
     {
        $vendor_id = Auth::user()->id;
 
 
-       $frst_pack = $request->input('tp_name');
-       $scnd_pack = $request->input('mp_name');
-       $third_pack = $request->input('yp_name');
-       $pack_values = $frst_pack.$scnd_pack.$third_pack;
+       $pack_values = $request->input('pack_name');
+       $pack_amount = $request->input('pack_amount');
+       // $scnd_pack = $request->input('mp_name');
+       // $third_pack = $request->input('yp_name');
+       // $pack_values = $frst_pack.$scnd_pack.$third_pack;
        // echo $values;
-       // exit();
-       if ($pack_values=='trial')
+        
+       if ($pack_values=='Trial pack')
         {
-            $frst_sub_data = array('vendor_id' => $vendor_id,'subscription_name'=>$pack_values);
+             $frst_sub_data = array('vendor_id' => $vendor_id,'subscription_name'=>$pack_values,'pack_amount'=>$pack_amount);
+             
             return view('payment',['frst_pack_data'=>$frst_sub_data]);
 
         }
-        elseif ($pack_values=='monthly') 
+        elseif ($pack_values=='Monthly pack') 
         {
-            $scnd_sub_data = array('vendor_id' => $vendor_id,'subscription_name'=>$pack_values);
+            $scnd_sub_data = array('vendor_id' => $vendor_id,'subscription_name'=>$pack_values,'pack_amount'=>$pack_amount);
             return view('payment',['scnd_pack_data'=>$scnd_sub_data]);
 
         }
-        elseif ($pack_values=='yearly')
+        elseif ($pack_values=='Yearly pack')
         {
-            $thrd_sub_data = array('vendor_id' => $vendor_id,'subscription_name'=>$pack_values,'sub_status'=>'1');
+            $thrd_sub_data = array('vendor_id' => $vendor_id,'subscription_name'=>$pack_values,'pack_amount'=>$pack_amount);
             return view('payment',['thrd_pack_data'=>$thrd_sub_data]);
         }
  
  
     }
-    // public function after_subscription(){
-    //      $vendor_id = Auth::user()->id;
-     
-    // }
+
 
 
     // public function subscription(Request $request)
