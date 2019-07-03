@@ -6,20 +6,20 @@
 <meta name="description" content="" />
 <meta name="keywords" content="" />
 <title>Web Admin panel</title>
-<link rel="icon" type="image/png" href="temp/images/fav.png">
-<link rel="stylesheet" href="temp/css/font-awesome.min.css">
-<link rel="stylesheet" href="temp/css/themify-icons.css">
-<link rel="stylesheet" href="temp/css/line-icons.css">
-<link rel="stylesheet" href="temp/css/bootstrap.min.css">
-<link rel="stylesheet" href="temp/css/animate.min.css">
-<link rel="stylesheet" href="temp/css/nice-select.css">
-<link rel="stylesheet" href="temp/css/perfect-scrollbar.min.css">
-<link rel="stylesheet" href="temp/css/jquery.datepicker.min.css">
+<link rel="icon" type="image/png" href="template/images/fav.png">
+<link rel="stylesheet" href="template/css/font-awesome.min.css">
+<link rel="stylesheet" href="template/css/themify-icons.css">
+<link rel="stylesheet" href="template/css/line-icons.css">
+<link rel="stylesheet" href="template/css/bootstrap.min.css">
+<link rel="stylesheet" href="template/css/animate.min.css">
+<link rel="stylesheet" href="template/css/nice-select.css">
+<link rel="stylesheet" href="template/css/perfect-scrollbar.min.css">
+<link rel="stylesheet" href="template/css/jquery.datepicker.min.css">
 <!-- calander -->
-<link rel="stylesheet" href="temp/css/flatweather.css">
-<link rel="stylesheet" href="temp/css/style.css">
-<link rel="stylesheet" href="temp/css/color.css">
-<link rel="stylesheet" href="temp/css/responsive.css">
+<link rel="stylesheet" href="template/css/flatweather.css">
+<link rel="stylesheet" href="template/css/style.css">
+<link rel="stylesheet" href="template/css/color.css">
+<link rel="stylesheet" href="template/css/responsive.css">
 
 </head>
 <body>
@@ -97,108 +97,7 @@
 								<div class="nav-icon3"> <span></span> <span></span> <span></span> <span></span> </div>
 								<i class="fa fa-navicon nav-icon3"></i>
 							</li>
-							<!-- <li class="notifications"><a href="#" title=""><i class="fa fa-bell-o"></i></a><span class="red-bg">02</span>
-								<div class="drop notify"> <span class="drop-head">Notifications</span>
-									<ul class="drop-meta">
-										<li> <i class="notifi-icon blue">N</i>
-											<div class="notifi-meta">
-												<h4><a href="#" title="">Nulla Vel Metus Scelerisque Ante Commodo. </a></h4>
-												<span>02:34PM</span> </div>
-										</li>
-										<li> <i class="notifi-icon red">C</i>
-											<div class="notifi-meta">
-												<h4><a href="#" title="">Nulla Vel Metus Scelerisque Ante Commodo. </a></h4>
-												<span>02:34PM</span> </div>
-										</li>
-										<li> <i class="notifi-icon yellow">A</i>
-											<div class="notifi-meta">
-												<h4><a href="#" title="">Nulla Vel Metus Scelerisque Ante Commodo. </a></h4>
-												<span>02:34PM</span> </div>
-										</li>
-										<li> <i class="notifi-icon blue">N</i>
-											<div class="notifi-meta">
-												<h4><a href="#" title="">Nulla Vel Metus Scelerisque Ante Commodo. </a></h4>
-												<span>02:34PM</span> </div>
-										</li>
-									</ul>
-									<span class="drop-bottom"><a href="#" title="">View More Notifications</a></span> </div>
-							</li> -->
-							<!-- <li class="messages"><a href="#" title=""><i class="fa fa-envelope-o"></i></a><span class="blue-bg">10</span>
-								<div class="drop messages"> <span class="drop-head">3 New Message <i class="fa fa-pencil-square-o"></i></span>
-									<ul class="drop-meta">
-										<li> <i class="notifi-icon"><img src="images/resources/user-mesg.jpg" alt=""></i>
-											<div class="notifi-meta"> <span>02:34PM</span>
-												<h4><a href="#" title="">Hi Teddy, Just wanted to let you...</a></h4>
-											</div>
-										</li>
-										<li> <i class="notifi-icon"><img src="temp/images/resources/user-mesg2.jpg" alt=""></i>
-											<div class="notifi-meta"> <span>02:34PM</span>
-												<h4><a href="#" title="">Hi Teddy, Just wanted to let you...</a></h4>
-											</div>
-										</li>
-										<li> <i class="notifi-icon"><img src="temp/images/resources/user-mesg3.jpg" alt=""></i>
-											<div class="notifi-meta"> <span>02:34PM</span>
-												<h4><a href="#" title="">Hi Teddy, Just wanted to let you...</a></h4>
-											</div>
-										</li>
-										<li> <i class="notifi-icon"><img src="temp/images/resources/user-mesg.jpg" alt=""></i>
-											<div class="notifi-meta"> <span>02:34PM</span>
-												<h4><a href="#" title="">Hi Teddy, Just wanted to let you...</a></h4>
-											</div>
-										</li>
-										<li> <i class="notifi-icon"><img src="temp/images/resources/user-mesg2.jpg" alt=""></i>
-											<div class="notifi-meta"> <span>02:34PM</span>
-												<h4><a href="#" title="">Hi Teddy, Just wanted to let you...</a></h4>
-											</div>
-										</li>
-									</ul>
-									<span class="drop-bottom"><a href="#" title="">View More messages</a></span> </div>
-							</li> -->
-							<<!-- li class="mega"><a href="#" title="">mega</a>
-								<div class="mega-menu">
-									<div class="row mega-style1">
-										<div class="col-lg-4">
-											<div class="mega-post-info"> <span>envato market</span>
-												<ul>
-													<li><a href="#" title="">Envato Market</a></li>
-													<li><a href="#" title="">terms</a></li>
-													<li><a href="#" title="">licenses</a></li>
-													<li><a href="#" title="">market API</a></li>
-													<li><a href="#" title="">Become an affiliate</a></li>
-													<li><a href="#" title="">help</a></li>
-													<li><a href="#" title="">Themes and Templates</a></li>
-												</ul>
-											</div>
-										</div>
-										<div class="col-lg-4">
-											<div class="mega-post-info"> <span>Themeforest</span>
-												<ul>
-													<li><a href="#" title="">Envato Market</a></li>
-													<li><a href="#" title="">terms</a></li>
-													<li><a href="#" title="">licenses</a></li>
-													<li><a href="#" title="">market API</a></li>
-													<li><a href="#" title="">Become an affiliate</a></li>
-													<li><a href="#" title="">help</a></li>
-													<li><a href="#" title="">Themes and Templates</a></li>
-												</ul>
-											</div>
-										</div>
-										<div class="col-lg-4">
-											<div class="mega-post-info"> <span>Evato Element</span>
-												<ul>
-													<li><a href="#" title="">Envato Market</a></li>
-													<li><a href="#" title="">terms</a></li>
-													<li><a href="#" title="">licenses</a></li>
-													<li><a href="#" title="">market API</a></li>
-													<li><a href="#" title="">Become an affiliate</a></li>
-													<li><a href="#" title="">help</a></li>
-													<li><a href="#" title="">Themes and Templates</a></li>
-												</ul>
-											</div>
-										</div>
-									</div>
-								</div>
-							</li> -->
+							
 						</ul>
 						<div class="t-search">
 							<form method="post">
@@ -207,14 +106,7 @@
 							</form>
 						</div>
 						<ul class="seting-area">
-							<!-- <li class="langages">
-								<a href="#" title="">Eng</a>
-								<ul class="drop language">
-									<li class="lang-selected"><a href="#"><i class="fa fa-check"></i> Eng</a></li>
-									<li><a href="#">Rus</a></li>
-									<li><a href="#">Jap</a></li>
-									<li><a href="#">Arb</a></li>
-								</ul> -->
+							
 							</li>
 							<!-- <li class="setting-panel"><a href="#" title=""><i class="icon-equalizer"></i></a></li> -->
 						</ul>
@@ -367,7 +259,7 @@
                     	<div class="row">
                     		 <div class="col-md-6 col-sm-6 field">
                         <label>Registration No<span>*</span> </label>
-                        <input value="<?php echo $user = Auth::user()->comp_reg_number;?>" name="reg_no" type="number">
+                        <input placeholder="Enter Registration Number" value="<?php echo $user = Auth::user()->comp_reg_number;?>" name="reg_no" type="number">
                         @if ($errors->has('reg_no'))
     					<div class="error">{{ $errors->first('reg_no') }}</div>
 						@endif
@@ -400,9 +292,9 @@
                       </div>
 
                       <div class="col-md-6 col-sm-12 field">
-                        <label>State / Province <span>*</span> </label>
+                        <label>State <span>*</span> </label>
                         	<select name="state">
-                          <option value="">Select Category</option>
+                          <option value="">Select State</option>
          					@foreach($state as $key => $value)
          					<option value="{{$value->id}}">{{$value->name}}</option>
          					@endforeach
@@ -414,9 +306,9 @@
 
 
 
-                      <div>
-                        <label id="ddd" class="col-md-6 col-sm-12 field">District<span>*</span> </label>
-                        	<!-- <select name="district" id="ddd"></select> -->
+                      <div class="col-md-6 col-sm-6 field">
+                        <label>District<span>*</span> </label>
+                        <div id="ddd"></div>                	 
                               					
                         
                         @if ($errors->has('district'))
@@ -430,7 +322,7 @@
                       <div class="col-md-6 col-sm-6 field">
                         <label>Country <span>*</span> </label>
                         <select name="country">
-                          <option value="">Select Category</option>
+                          <option value="">Select Country</option>
          					@foreach($country as $key => $value)
          					<option value="{{$value->name}}">{{$value->name}}</option>
          					@endforeach
@@ -443,7 +335,7 @@
                       
                        <div class="col-md-6 col-sm-12 field">
                         <label>Zip / Postal Code <span>*</span> </label>
-                        <input value="<?php echo $user = Auth::user()->pincode;?>" name="pincode" type="number">
+                        <input value="<?php echo $user = Auth::user()->pincode;?>" placeholder="Enter zip code" name="pincode" type="number">
                         @if ($errors->has('pincode'))
     					<div class="error">{{ $errors->first('pincode') }}</div>
 						@endif
@@ -453,7 +345,7 @@
                       
                       <div class="col-md-12 col-sm-12 field">
                         <label>Landmark<span>*</span> </label>
-                        <input placeholder="" value="<?php echo $user = Auth::user()->landmark;?>" name="landmark" type="text">
+                        <input placeholder="Enter Landmark" value="<?php echo $user = Auth::user()->landmark;?>" name="landmark" type="text">
                         @if ($errors->has('landmark'))
     					<div class="error">{{ $errors->first('landmark') }}</div>
 						@endif
@@ -461,7 +353,7 @@
 
                       <div class="col-md-12 col-sm-12 field">
                         <label>Fax<span>*</span> </label>
-                        <input placeholder="" value="<?php echo $user = Auth::user()->fax;?>" name="fax" type="number">
+                        <input placeholder="Enter Fax" value="<?php echo $user = Auth::user()->fax;?>" name="fax" type="number">
                         @if ($errors->has('fax'))
     					<div class="error">{{ $errors->first('fax') }}</div>
 						@endif
@@ -469,7 +361,7 @@
 
                       <div class="col-md-12 col-sm-12 field">
                         <label>Landline Number<span>*</span> </label>
-                        <input placeholder="" value="<?php echo $user = Auth::user()->landline_number;?>" name="landline_number" type="number">
+                        <input placeholder="Enter Landline Number" value="<?php echo $user = Auth::user()->landline_number;?>" name="landline_number" type="number">
                         @if ($errors->has('landline_number'))
     					<div class="error">{{ $errors->first('landline_number') }}</div>
 						@endif
@@ -477,7 +369,7 @@
 
                       <div class="col-md-4 col-sm-12 field">
                         <label>Website URL <span>*</span> </label>
-                        <input name="web_url" value="http://m.google.com/webinane" type="text">
+                        <input name="web_url" placeholder="Enter Website URL" type="text">
                         @if ($errors->has('web_url'))
     					<div class="error">{{ $errors->first('web_url') }}</div>
 						@endif
@@ -485,7 +377,7 @@
 
                       <div class="col-md-4 col-sm-6 field">
                         <label>Add Facebook URL <span>*</span> </label>
-                        <input name="fb_url" value="http://m.facebook.com/webinane" type="text">
+                        <input name="fb_url" placeholder="Enter FB URL" type="text">
                         @if ($errors->has('fb_url'))
     					<div class="error">{{ $errors->first('fb_url') }}</div>
 						@endif
@@ -493,7 +385,7 @@
 
                       <div class="col-md-4 col-sm-6 field">
                         <label>Add Instagram URL <span>*</span> </label>
-                        <input name="insta_url" value="http://m.twitter.com/webinane" type="text">
+                        <input name="insta_url" placeholder="Enter Instagram URL" type="text">
                         @if ($errors->has('insta_url'))
     					<div class="error">{{ $errors->first('insta_url') }}</div>
 						@endif
@@ -507,7 +399,7 @@
 							
 						  </label>
 						  @if ($errors->has('logo'))
-    					<div class="error">{{ $errors->first('logo') }}Height and width should be 84.</div>
+    					<div class="error">{{ $errors->first('logo') }}</div>
 						@endif
 						</div> 
 						<div class="col-md-12 col-sm-12 field"> 
@@ -606,17 +498,17 @@
         </div><!-- side panel -->
   
 </div>
-<script src="temp/js/jquery.js"></script> 
-<script src="temp/js/bootstrap.min.js"></script> 
-<script src="temp/js/perfect-scrollbar.jquery.min.js"></script> 
-<script src="temp/js/chart.min.js"></script> 
-<script src="temp/js/echart.min.js"></script> 
-<script src="temp/js/nice-select.js"></script> 
-<script src="temp/js/jquery.sparkline.min.js"></script> 
-<script src="temp/js/custom2.js"></script> 
-<script src="temp/js/flatweather.min.js"></script> 
-<script src="temp/js/html5lightbox.js"></script> 
-<script src="temp/js/custom.js"></script>
+<script src="template/js/jquery.js"></script> 
+<script src="template/js/bootstrap.min.js"></script> 
+<script src="template/js/perfect-scrollbar.jquery.min.js"></script> 
+<script src="template/js/chart.min.js"></script> 
+<script src="template/js/echart.min.js"></script> 
+<script src="template/js/nice-select.js"></script> 
+<script src="template/js/jquery.sparkline.min.js"></script> 
+<script src="template/js/custom2.js"></script> 
+<script src="template/js/flatweather.min.js"></script> 
+<script src="template/js/html5lightbox.js"></script> 
+<script src="template/js/custom.js"></script>
 
 <script type="text/javascript">
     $(document).ready(function() {
@@ -634,24 +526,32 @@
                 	//alert(data);
                 	var data1 = JSON.parse(data); 
                 	//alert(data1);
-			var dist=$('#dist');
+			var distt=$('#dist');
 
-				
+				// var select_tag='<select title="select district">';
+				 var toAppend = '<select name="district" >';
 					$.each(data1, function(key, value){
                 	//alert(value.name) ;
                 	   // dist.append($("<option></option>")
                     // .attr("value",value.name)
                     // .text(value.name)); 
-                    var dist='<option value="'+value.id+'">'+value.name+'</option>';
-                    // alert(dist);
-                    $('#ddd').append(dist);
-
+                    toAppend += '<option value="'+value.id+'">'+value.name+'</option>';
+                   //alert(dist);
+                      //var a=select_tag.append(dist+select_close);
+                   //alert(a);
+                    //  var b=a.append(select_close);
+                    // $('#ddd').append(b);
+//                   
+// $('#ddd').append(select_tag+dist+select_close);
                             });
+					$('#ddd').html(toAppend);
+				
+					// var select=select_tag+dist+select_close;
+					// alert(select);
+//$('#ddd').append(select);
 					//alert(dist);
 					
-					
-					
-                		
+					//alert(dist);
                 		// $.each(data1, function(index) {
                 			
                 		// 	$('select[name="districts"]').append('<option value="'+(data1[index].id)+'">'+(data1[index].name)+'</option>');
