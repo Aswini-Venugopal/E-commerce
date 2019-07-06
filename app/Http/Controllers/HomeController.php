@@ -72,7 +72,7 @@ class HomeController extends Controller
         //echo $distt= $request->input('state');
                                      // echo $district = $request->input('district');
                                      // exit;
-        $this->validate($request,[ 
+       $validator = Validator::make($request->all(),[
             'reg_no' => 'required',          
             'name' => 'required',
             'phone' => 'required|numeric|digits:10',
@@ -90,7 +90,9 @@ class HomeController extends Controller
             'logo' => ' dimensions:width=84,height=84|mimes:jpeg,png',
             'image' => 'mimes:jpeg,png'
              ]);
-
+if($validator->fails()) {
+    return  back()->withErrors($validator)->withInput($request->all());
+}
                                      
          //       echo "string";
          // exit();
@@ -159,7 +161,7 @@ class HomeController extends Controller
 
                     // $vendor_registration->image = $url;
                 }
-                return view('/profile');
+                return redirect('/home');
                    
                 }
 public function logout(Request $request)
