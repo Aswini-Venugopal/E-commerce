@@ -12,6 +12,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Redirect;
 //use Illuminate\Support\Facades\validator;
 use Illuminate\Foundation\Validation\ValidatesRequests;
 use Auth;
@@ -77,9 +78,6 @@ class HomeController extends Controller
             'name' => 'required',
             'phone' => 'required|numeric|digits:10',
             'email' => 'required|email', 
-            'state' => 'required',
-            'district' => 'required', 
-            'country' => 'required', 
             'pincode' => 'required',          
             'landmark' => 'required',
             'fax' => 'numeric|digits:10',  
@@ -116,11 +114,7 @@ if($validator->fails()) {
                                      'logo'=>$request->input('logo'),
                                   'image'=>$request->input('image')
                                 );
-            // print_r($updateDetails);
-            // exit();
             
-
-                                   
                     DB::table('vendor_registration')
                         ->where('id', Auth::user()->id)
                         ->update($updateDetails);
@@ -247,5 +241,6 @@ public function subscription(Request $request)
 
  
     // }
+    
     
 }
