@@ -21,6 +21,7 @@
 </head>
 <body>
 <!-- Start Page Loading -->
+<?php if (count($sub_data)!='') { ?>
     <div id="loader-wrapper">
       <div id="loader"></div>
       <div class="loader-section section-left"></div>
@@ -58,7 +59,7 @@
                                                     <li><a href="template/product.html" title="">product</a></li>
                                                     <li><a href="template/product-detail.html">product-detail</a></li>
                                                     <li><a href="template/product-order.html">product-order</a></li>
-                                                    <li><a href="template/product-add.html">add product</a></li>
+                                                    <li><a href="{{ url('redirect')}}">add product</a></li>
                                                     <li><a href="template/product-cart.html">product cart</a></li>
                                                 </ul>
                                             </li>
@@ -109,6 +110,7 @@
 			</div>
 		</header>
 			<!-- side header -->
+		<?php }?>
 			<div class="topbar">
 				<div class="container-fluid">
 					<div class="row">
@@ -384,7 +386,7 @@
                         <div class="admin-meta"> <img src="template/images/resources/profile-avatar.jpg" alt="">
                           <h5><?php echo $user = Auth::user()->name;?>
 </h5>
-                          <span>developer</span> </div>
+                          <span><?php echo $user = Auth::user()->email;?></span> </div>
                       </div>
                     </div>
                     <div class="col-md-8 col-sm-12 col-xs-12">

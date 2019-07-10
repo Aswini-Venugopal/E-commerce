@@ -239,8 +239,8 @@
                     <span>Welcome To web Admin Panel!</span>
                   </div>
                   <ul class="bread-crumb">
-                    <li><a href="{{ url('/profile')}}" title="">Home</a></li>
-                    <li>Dashbord</li>
+                    <li><a href="{{ url('/home')}}" title="">Home</a></li>
+                    
                   </ul>
                 </div>
                 <div class="inner-bg">
@@ -259,7 +259,7 @@
                     	<div class="row">
                     		 <div class="col-md-6 col-sm-6 field">
                         <label>Registration No<span>*</span> </label>
-                        <input placeholder="Enter Registration Number" value="<?php echo $user = Auth::user()->comp_reg_number;?>" name="reg_no" type="number">
+                        <input placeholder="Enter Registration Number" value="{{ old('reg_no', Auth::user()->comp_reg_number)}}" name="reg_no" type="number">
                         @if ($errors->has('reg_no'))
     					<div class="error">{{ $errors->first('reg_no') }}</div>
 						@endif
@@ -268,7 +268,7 @@
 
                       <div class="col-md-6 col-sm-6 field">
                         <label>Your Name <span>*</span> </label>
-                        <input value="<?php echo $user = Auth::user()->name;?>" type="text" name="name">
+                        <input value="{{ old('name', Auth::user()->name)}}" type="text" name="name">
                          @if ($errors->has('name'))
     					<div class="error">{{ $errors->first('name') }}</div>
 						@endif
@@ -277,7 +277,7 @@
 
                       <div class="col-md-12 col-sm-12 field">
                         <label>Contact Number<span>*</span> </label>
-                        <input placeholder="" value="<?php echo Auth::user()->phone;?>" type="number" name="phone">
+                        <input placeholder="" value="{{ old('phone', Auth::user()->phone)}}" type="number" name="phone">
                         @if ($errors->has('phone'))
     					<div class="error">{{ $errors->first('phone') }}</div>
 						@endif
@@ -286,15 +286,16 @@
 
                       <div class="col-md-12 col-sm-12 field">
                         <label>Email id<span>*</span> </label>
-                        <input placeholder="" readonly="readonly" value="<?php echo Auth::user()->email;?>" type="text" name="email"> @if ($errors->has('name'))
-    					<div class="error">{{ $errors->first('name') }}</div>
+                        <input placeholder=""  value="{{ old('email', Auth::user()->email)}}"  type="text" name="email">
+                         @if ($errors->has('email'))
+    					<div class="error">{{ $errors->first('email') }}</div>
 						@endif 
                       </div>
 
                       <div class="col-md-6 col-sm-12 field">
                         <label>State <span>*</span> </label>
-                        	<select name="state">
-                          <option value="">Select State</option>
+                        	<select name="state" value="{{ old('state', Auth::user()->state)}}">
+                         <option><?php echo Auth::user()->state;?></option>
          					@foreach($state as $key => $value)
          					<option value="{{$value->id}}">{{$value->name}}</option>
          					@endforeach
@@ -321,10 +322,10 @@
 
                       <div class="col-md-6 col-sm-6 field">
                         <label>Country <span>*</span> </label>
-                        <select name="country">
-                          <option value="">Select Country</option>
+                        <select name="country" value="{{ old('country', Auth::user()->country)}}">
+                          <option><?php echo Auth::user()->country;?></option>
          					@foreach($country as $key => $value)
-         					<option value="{{$value->name}}">{{$value->name}}</option>
+                                                         <option value="{{$value->name}}">{{$value->name}}</option> 
          					@endforeach
                         </select>
                         @if ($errors->has('country'))
@@ -335,7 +336,7 @@
                       
                        <div class="col-md-6 col-sm-12 field">
                         <label>Zip / Postal Code <span>*</span> </label>
-                        <input value="<?php echo $user = Auth::user()->pincode;?>" placeholder="Enter zip code" name="pincode" type="number">
+                        <input value="{{ old('pincode', Auth::user()->pincode)}}" placeholder="Enter zip code" name="pincode" type="number">
                         @if ($errors->has('pincode'))
     					<div class="error">{{ $errors->first('pincode') }}</div>
 						@endif
@@ -345,7 +346,7 @@
                       
                       <div class="col-md-12 col-sm-12 field">
                         <label>Landmark<span>*</span> </label>
-                        <input placeholder="Enter Landmark" value="<?php echo $user = Auth::user()->landmark;?>" name="landmark" type="text">
+                        <input placeholder="Enter Landmark" value="{{ old('landmark', Auth::user()->landmark)}}" name="landmark" type="text">
                         @if ($errors->has('landmark'))
     					<div class="error">{{ $errors->first('landmark') }}</div>
 						@endif
@@ -353,7 +354,7 @@
 
                       <div class="col-md-12 col-sm-12 field">
                         <label>Fax<span>*</span> </label>
-                        <input placeholder="Enter Fax" value="<?php echo $user = Auth::user()->fax;?>" name="fax" type="number">
+                        <input placeholder="Enter Fax" value="{{ old('fax', Auth::user()->fax)}}"  name="fax" type="number">
                         @if ($errors->has('fax'))
     					<div class="error">{{ $errors->first('fax') }}</div>
 						@endif
@@ -361,7 +362,7 @@
 
                       <div class="col-md-12 col-sm-12 field">
                         <label>Landline Number<span>*</span> </label>
-                        <input placeholder="Enter Landline Number" value="<?php echo $user = Auth::user()->landline_number;?>" name="landline_number" type="number">
+                        <input placeholder="Enter Landline Number" value="{{ old('landline_number', Auth::user()->landline_number)}}"  name="landline_number" type="number">
                         @if ($errors->has('landline_number'))
     					<div class="error">{{ $errors->first('landline_number') }}</div>
 						@endif
@@ -369,7 +370,7 @@
 
                       <div class="col-md-4 col-sm-12 field">
                         <label>Website URL <span>*</span> </label>
-                        <input name="web_url" placeholder="Enter Website URL" type="text">
+                        <input name="web_url" placeholder="Enter Website URL" type="text" value="{{ old('web_url', Auth::user()->website)}}">
                         @if ($errors->has('web_url'))
     					<div class="error">{{ $errors->first('web_url') }}</div>
 						@endif
@@ -377,7 +378,7 @@
 
                       <div class="col-md-4 col-sm-6 field">
                         <label>Add Facebook URL <span>*</span> </label>
-                        <input name="fb_url" placeholder="Enter FB URL" type="text">
+                        <input name="fb_url" placeholder="Enter FB URL" type="text" value="{{ old('fb_url', Auth::user()->facebook_url)}}" >
                         @if ($errors->has('fb_url'))
     					<div class="error">{{ $errors->first('fb_url') }}</div>
 						@endif
@@ -385,7 +386,7 @@
 
                       <div class="col-md-4 col-sm-6 field">
                         <label>Add Instagram URL <span>*</span> </label>
-                        <input name="insta_url" placeholder="Enter Instagram URL" type="text">
+                        <input name="insta_url" placeholder="Enter Instagram URL" type="text" value="{{ old('insta_url', Auth::user()->instagram_url)}}" >
                         @if ($errors->has('insta_url'))
     					<div class="error">{{ $errors->first('insta_url') }}</div>
 						@endif
@@ -394,8 +395,8 @@
                      
 				  <div class="col-md-12 col-sm-12 field"> 
 							<span class="upload-image">upload logo</span>
-						  <label class="fileContainer"> <span>upload</span>
-							<input type="file" value="<?php echo $user = Auth::user()->logo;?>" name="logo">
+						  <label> <span>upload</span>
+							<input type="file"  name="logo" value="{{ old('logo', Auth::user()->logo)}}" >
 							
 						  </label>
 						  @if ($errors->has('logo'))
@@ -404,8 +405,8 @@
 						</div> 
 						<div class="col-md-12 col-sm-12 field"> 
 							<span class="upload-image">upload image</span>
-						  <label class="fileContainer"> <span>upload</span>
-							<input type="file" value="<?php echo $user = Auth::user()->image;?>" name="image">
+						  <label> <span>upload</span>
+							<input type="file" value="{{ old('image', Auth::user()->image)}}" name="image">
 							
 						  </label>
 						  @if ($errors->has('image'))
@@ -523,13 +524,13 @@
                 data: {'state_id': state_id  },
                 //dataType: "json",
             success:function(data) {
-                	//alert(data);
+                	
                 	var data1 = JSON.parse(data); 
-                	//alert(data1);
+                	
 			var distt=$('#dist');
 
 				// var select_tag='<select title="select district">';
-				 var toAppend = '<select name="district" >';
+				 var toAppend = '<select name="district">';
 					$.each(data1, function(key, value){
                 	//alert(value.name) ;
                 	   // dist.append($("<option></option>")
