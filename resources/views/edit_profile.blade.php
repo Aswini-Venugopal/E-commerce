@@ -89,7 +89,7 @@
 			<div class="container-fluid">
 				<div class="row">
 					<div class="col-lg-2">
-						<div class="logo"><a href="temp/index-2.html" title=""><img src="temp/images/logo.png" alt=""></a></div>
+						<div class="logo"><a href="temp/index-2.html" title=""><img src="template/images/logo.png" alt=""></a></div>
 					</div>
 					<div class="col-lg-9">
 						<ul class="notify-area">
@@ -114,7 +114,7 @@
 					<div class="col-lg-1">
 						<div class="user-head">
 							<div class="admin">
-								<div class="admin-avatar"><img src="temp/images/resources/admin.png" alt=""> <i class="online"></i> </div>
+								<div class="admin-avatar"><img src="template/images/resources/admin.png" alt=""> <i class="online"></i> </div>
 							</div>
 							<div class="drop setting"> <span class="drop-head">stifen Doe <i>30 days trial</i></span>
 								<ul class="drop-meta">
@@ -171,22 +171,22 @@
                                                             <h4><a href="#" title="">Hi Teddy, Just wanted to let you...</a></h4>
                                                         </div>
                                                     </li>
-                                                    <li> <i class="notifi-icon"><img src="temp/images/resources/user-mesg2.jpg" alt=""></i>
+                                                    <li> <i class="notifi-icon"><img src="template/images/resources/user-mesg2.jpg" alt=""></i>
                                                         <div class="notifi-meta"> <span>02:34PM</span>
                                                             <h4><a href="#" title="">Hi Teddy, Just wanted to let you...</a></h4>
                                                         </div>
                                                     </li>
-                                                    <li> <i class="notifi-icon"><img src="temp/images/resources/user-mesg3.jpg" alt=""></i>
+                                                    <li> <i class="notifi-icon"><img src="template/images/resources/user-mesg3.jpg" alt=""></i>
                                                         <div class="notifi-meta"> <span>02:34PM</span>
                                                             <h4><a href="#" title="">Hi Teddy, Just wanted to let you...</a></h4>
                                                         </div>
                                                     </li>
-                                                    <li> <i class="notifi-icon"><img src="temp/images/resources/user-mesg.jpg" alt=""></i>
+                                                    <li> <i class="notifi-icon"><img src="template/images/resources/user-mesg.jpg" alt=""></i>
                                                         <div class="notifi-meta"> <span>02:34PM</span>
                                                             <h4><a href="#" title="">Hi Teddy, Just wanted to let you...</a></h4>
                                                         </div>
                                                     </li>
-                                                    <li> <i class="notifi-icon"><img src="temp/images/resources/user-mesg2.jpg" alt=""></i>
+                                                    <li> <i class="notifi-icon"><img src="template/images/resources/user-mesg2.jpg" alt=""></i>
                                                         <div class="notifi-meta"> <span>02:34PM</span>
                                                             <h4><a href="#" title="">Hi Teddy, Just wanted to let you...</a></h4>
                                                         </div>
@@ -198,7 +198,7 @@
 									
                                     <div class="user-head">
 									<div class="admin">
-										<div class="admin-avatar"> <img src="temp/images/resources/admin.png" alt=""> <i class="online"></i> </div>
+										<div class="admin-avatar"> <img src="template/images/resources/admin.png" alt=""> <i class="online"></i> </div>
 									</div>
 									<div class="drop setting"> <span class="drop-head">stifen Doe <i>30 days trial</i></span>
 										<ul class="drop-meta">
@@ -309,6 +309,8 @@
 
                       <div class="col-md-6 col-sm-6 field">
                         <label>District<span>*</span> </label>
+                        <select name="district">
+                              <option value="<?php echo Auth::user()->district;?>"><?php echo Auth::user()->district;?></option></select>
                         <div id="ddd"></div>                	 
                               					
                         

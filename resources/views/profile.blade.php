@@ -41,11 +41,11 @@
                                         <ul class="parent-menu">
                                             <li class="menu-item-has-children"> <a title="#"><i class="fa fa-dashboard"></i><span>Dashboard</span></a>
                                                 <ul>
-                                                    <li><a href="template/index-2.html" title="">Dashboard 1</a></li>
-                                                    <li><a href="template/index2.html" title="">Dashboard 2</a></li>
+                                                    <li><a href="template/index-2.html" title="">Home</a></li>
+                                                    <!-- <li><a href="template/index2.html" title="">Dashboard 2</a></li>
                                                     <li><a href="template/index3.html" title="">Dashboard 3</a></li>
                                                     <li><a href="template/index4.html" title="">Dashboard 4</a></li>
-                                                    <li><a href="template/index5.html" title="">Dashboard 5</a></li>
+                                                    <li><a href="template/index5.html" title="">Dashboard 5</a></li> -->
                                                 </ul>
                                             </li>
                                             <li class="menu-item-has-children"> <a title=""><i class="fa fa-shopping-cart"></i><span>New Orders</span></a>
@@ -56,16 +56,16 @@
                                             </li>
                                             <li class="menu-item-has-children"> <a title=""><i class="fa fa-laptop"></i><span>Products</span></a>
                                                 <ul class="mega">
-                                                    <li><a href="template/product.html" title="">product</a></li>
+                                                    <!-- <li><a href="template/product.html" title="">product</a></li>
                                                     <li><a href="template/product-detail.html">product-detail</a></li>
-                                                    <li><a href="template/product-order.html">product-order</a></li>
-                                                    <li><a href="{{ url('redirect')}}">add product</a></li>
-                                                    <li><a href="template/product-cart.html">product cart</a></li>
+                                                    <li><a href="template/product-order.html">product-order</a></li> -->
+                                                    <li><a href="{{ url('add_redirect')}}">Add product</a></li>
+                                                    <li><a href="{{ url('view_product')}}">View Product</a></li>
                                                 </ul>
                                             </li>
                                             <li class="menu-item-has-children"> <a title="#"><i class="fa fa-bookmark-o"></i><span>Previous Orders</span></a>
                                                 <ul>
-                                                    <li><a href="template/accordion-n-tabs.html">accordions & tabs</a></li>
+                                                    <!-- <li><a href="template/accordion-n-tabs.html">accordions & tabs</a></li>
                                                     <li><a href="template/elements.html">elements</a></li>
                                                     <li><a href="template/invoices.html">invoices</a></li>
                                                     <li><a href="template/tabels.html">tabels styles</a></li>
@@ -73,7 +73,7 @@
                                                     <li><a href="template/megamenu.html">mega menu styles</a></li>
                                                     <li><a href="template/socials-btns.html">social buttons</a></li>
                                                     <li><a href="template/testimonials.html">testimonials styles</a></li>
-													<li><a href="template/calendar.html">event calendar</a></li>
+													<li><a href="template/calendar.html">event calendar</a></li> -->
                                                 </ul>
                                             </li>
 											<!-- <li><a href="template/inbox.html" title=""><i class="fa fa-inbox"></i><span>inbox</span><ins>5</ins></a></li>
@@ -248,15 +248,12 @@
 						<div class="col-lg-1">
 							<div class="user-head">
 								<div class="admin">
-									<div class="admin-avatar"><img src="template/images/resources/admin.png" alt=""> <!-- <i class="online"></i> --> </div>
+									<div class="admin-avatar"><img src="<?php echo Auth::user()->logo;?>" style="height: 40px;width: 40px" alt=""> <!-- <i class="online"></i> --> </div>
 								</div>
 								<div class="drop setting"> <span class="drop-head"><?php echo $user = Auth::user()->name;?><i>30 days trial</i></span>
 									<ul class="drop-meta">
 										<li> <a href="#" title=""><i class="fa fa-eyedropper"></i>Edit Profile</a> </li>
-										<li> <a href="#" title=""><i class="fa fa-envelope-o"></i>My Inbox</a> </li>
-										<li> <a href="#" title=""><i class="fa fa-adjust"></i>task</a> </li>
-										<li> <a href="#" title=""><i class="fa fa-calendar"></i>Calender</a> </li>
-										<li> <a href="#" title=""><i class="fa fa-align-right"></i>Balance Report</a> </li>
+										<li> <a href="{{ route('change_password') }}" title=""><i class="fa fa-lock"></i>Change Password</a> </li>
 									</ul>
 									<span class="drop-bottom"><a href="{{ route('logout') }}" title=""><i class="fa fa-sign-out"></i>log Out</a></span> </div>
 							</div>
@@ -427,9 +424,9 @@
 							</div>
 							<div class="col-md-6">
 							  <ul class="vlaue-show">
-								<li> <span>37</span> <a href="#" title="">Products</a> </li>
+								<!-- <li> <span>37</span> <a href="#" title="">Products</a> </li>
 								<li> <span>59</span> <a href="#" title="">New Orders</a> </li>
-								<li> <span>60</span> <a href="#" title="">Customers</a> </li>
+								<li> <span>60</span> <a href="#" title="">Customers</a> </li> -->
 							  </ul>
 							</div>
 						</div> 
@@ -443,6 +440,7 @@
                   <div class="col-md-6 col-sm-6 col-xs-12">
                     <div class="widget">
                       <div class="widget-title">
+                      	
                         <h4>your Products</h4>
                         <ul class="widget-controls">
 							<li title="Refresh" class="refresh-content"><i class="fa fa-refresh"></i></li>

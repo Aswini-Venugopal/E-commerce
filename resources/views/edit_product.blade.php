@@ -6,23 +6,20 @@
 <meta name="description" content="" />
 <meta name="keywords" content="" />
 <title>Web Admin panel</title>
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
-<link rel="icon" type="image/png" href="template/images/fav.png">
-<link rel="stylesheet" href="template/css/font-awesome.min.css">
-	<link rel="stylesheet" href="template/css/themify-icons.css">
-    <link rel="stylesheet" href="template/css/line-icons.css">
-<link rel="stylesheet" href="template/css/bootstrap.min.css">
-<link rel="stylesheet" href="template/css/animate.min.css">
-<link rel="stylesheet" href="template/css/perfect-scrollbar.min.css">
-<link rel="stylesheet" href="template/css/jquery.datepicker.min.css">
+<link rel="icon" type="image/png" href="{{url('/')}}/template/images/fav.png">
+<link rel="stylesheet" href="{{url('/')}}/template/css/font-awesome.min.css">
+	<link rel="stylesheet" href="{{url('/')}}/template/css/themify-icons.css">
+    <link rel="stylesheet" href="{{url('/')}}/template/css/line-icons.css">
+<link rel="stylesheet" href="{{url('/')}}/template/css/bootstrap.min.css">
+<link rel="stylesheet" href="{{url('/')}}/template/css/animate.min.css">
+<link rel="stylesheet" href="{{url('/')}}/template/css/perfect-scrollbar.min.css">
+<link rel="stylesheet" href="{{url('/')}}/template/css/jquery.datepicker.min.css">
 <!-- calander -->
-<link rel="stylesheet" href="template/css/flatweather.css">
-<link rel="stylesheet" href="template/css/nice-select.css">
-<link rel="stylesheet" href="template/css/style.css">
-<link rel="stylesheet" href="template/css/color.css">
-<link rel="stylesheet" href="template/css/responsive.css">
+<link rel="stylesheet" href="{{url('/')}}/template/css/flatweather.css">
+<link rel="stylesheet" href="{{url('/')}}/template/css/nice-select.css">
+<link rel="stylesheet" href="{{url('/')}}/template/css/style.css">
+<link rel="stylesheet" href="{{url('/')}}/template/css/color.css">
+<link rel="stylesheet" href="{{url('/')}}/template/css/responsive.css">
 </head>
 <body>
 <!-- Start Page Loading -->
@@ -39,45 +36,45 @@
           <header>
             <div class="side-menus">
                 <div class="side-header">
-                    <div class="logo"><a title="" href="template/index-2.html"><img alt="" src="template/images/logo2.png"></a></div>
+                    <div class="logo"><a title="" href="{{url('/')}}/template/index-2.html"><img alt="" src="{{url('/')}}/template/images/logo2.png"></a></div>
                     <nav class="slide-menu">
                                         <span>Navigation <i class="ti-layout"></i></span>
                                         <ul class="parent-menu">
                                             <li class="menu-item-has-children"> <a title="#"><i class="fa fa-dashboard"></i><span>Dashboard</span></a>
                                                 <ul>
-                                                    <li><a href="template/index-2.html" title="">Dashboard 1</a></li>
-                                                    <li><a href="template/index2.html" title="">Dashboard 2</a></li>
-                                                    <li><a href="template/index3.html" title="">Dashboard 3</a></li>
-                                                    <li><a href="template/index4.html" title="">Dashboard 4</a></li>
-                                                    <li><a href="template/index5.html" title="">Dashboard 5</a></li>
+                                                    <li><a href="{{url('/')}}/template/index-2.html" title="">Dashboard 1</a></li>
+                                                    <li><a href="{{url('/')}}/template/index2.html" title="">Dashboard 2</a></li>
+                                                    <li><a href="{{url('/')}}/template/index3.html" title="">Dashboard 3</a></li>
+                                                    <li><a href="{{url('/')}}/template/index4.html" title="">Dashboard 4</a></li>
+                                                    <li><a href="{{url('/')}}/template/index5.html" title="">Dashboard 5</a></li>
                                                 </ul>
                                             </li>
                                             <li class="menu-item-has-children"> <a title=""><i class="fa fa-shopping-cart"></i><span>New Orders</span></a>
                                                 <ul class="mega">
-                                                    <li><a href="template/index-boxed.html" title="">New Products</a></li>
-                                                    <li><a href="template/overlap-sidebar.html">All Products</a></li>
+                                                    <li><a href="{{url('/')}}/template/index-boxed.html" title="">New Products</a></li>
+                                                    <li><a href="{{url('/')}}/template/overlap-sidebar.html">All Products</a></li>
                                                 </ul>
                                             </li>
                                             <li class="menu-item-has-children"> <a title=""><i class="fa fa-laptop"></i><span>Products</span></a>
                                                 <ul class="mega">
-                                                    <li><a href="template/product.html" title="">product</a></li>
-                                                    <li><a href="template/product-detail.html">product-detail</a></li>
-                                                    <li><a href="template/product-order.html">product-order</a></li>
+                                                    <li><a href="{{url('/')}}/template/product.html" title="">product</a></li>
+                                                    <li><a href="{{url('/')}}/template/product-detail.html">product-detail</a></li>
+                                                    <li><a href="{{url('/')}}/template/product-order.html">product-order</a></li>
                                                     <li><a href="{{url('add_redirect')}}">add product</a></li>
-                                                    <li><a href="template/product-cart.html">product cart</a></li>
+                                                    <li><a href="{{url('/')}}/template/product-cart.html">product cart</a></li>
                                                 </ul>
                                             </li>
                                             <li class="menu-item-has-children"> <a title="#"><i class="fa fa-bookmark-o"></i><span>Previous Orders</span></a>
                                                 <ul>
-                                                    <li><a href="template/accordion-n-tabs.html">accordions & tabs</a></li>
-                                                    <li><a href="template/elements.html">elements</a></li>
-                                                    <li><a href="template/invoices.html">invoices</a></li>
-                                                    <li><a href="template/tabels.html">tabels styles</a></li>
+                                                    <li><a href="{{url('/')}}/template/accordion-n-tabs.html">accordions & tabs</a></li>
+                                                    <li><a href="{{url('/')}}/template/elements.html">elements</a></li>
+                                                    <li><a href="{{url('/')}}/template/invoices.html">invoices</a></li>
+                                                    <li><a href="{{url('/')}}/template/tabels.html">tabels styles</a></li>
                                                     <li><a href="typography.html">typography</a></li>
-                                                    <li><a href="template/megamenu.html">mega menu styles</a></li>
-                                                    <li><a href="template/socials-btns.html">social buttons</a></li>
-                                                    <li><a href="template/testimonials.html">testimonials styles</a></li>
-                                                    <li><a href="template/calendar.html">event calendar</a></li>
+                                                    <li><a href="{{url('/')}}/template/megamenu.html">mega menu styles</a></li>
+                                                    <li><a href="{{url('/')}}/template/socials-btns.html">social buttons</a></li>
+                                                    <li><a href="{{url('/')}}/template/testimonials.html">testimonials styles</a></li>
+                                                    <li><a href="{{url('/')}}/template/calendar.html">event calendar</a></li>
                                                 </ul>
                                             </li>
                                             
@@ -91,7 +88,7 @@
                 <div class="container-fluid">
                     <div class="row">
                         <div class="col-lg-2">
-                            <div class="logo"><a href="template/index-2.html" title=""><img src="template/images/logo.png" alt=""></a></div>
+                            <div class="logo"><a href="{{url('/')}}/template/index-2.html" title=""><img src="{{url('/')}}/template/images/logo.png" alt=""></a></div>
                         </div>
                         <div class="col-lg-9">
                             <ul class="notify-area">
@@ -128,27 +125,27 @@
                                 <li class="messages"><a href="#" title=""><!-- <i class="fa fa-envelope-o"></i></a><span class="blue-bg">10</span> -->
                                     <div class="drop messages"> <span class="drop-head">3 New Message <i class="fa fa-pencil-square-o"></i></span>
                                         <ul class="drop-meta">
-                                            <li> <i class="notifi-icon"><img src="template/images/resources/user-mesg.jpg" alt=""></i>
+                                            <li> <i class="notifi-icon"><img src="{{url('/')}}/template/images/resources/user-mesg.jpg" alt=""></i>
                                                 <div class="notifi-meta"> <span>02:34PM</span>
                                                     <h4><a href="#" title="">Hi Teddy, Just wanted to let you...</a></h4>
                                                 </div>
                                             </li>
-                                            <li> <i class="notifi-icon"><img src="template/images/resources/user-mesg2.jpg" alt=""></i>
+                                            <li> <i class="notifi-icon"><img src="{{url('/')}}/template/images/resources/user-mesg2.jpg" alt=""></i>
                                                 <div class="notifi-meta"> <span>02:34PM</span>
                                                     <h4><a href="#" title="">Hi Teddy, Just wanted to let you...</a></h4>
                                                 </div>
                                             </li>
-                                            <li> <i class="notifi-icon"><img src="template/images/resources/user-mesg3.jpg" alt=""></i>
+                                            <li> <i class="notifi-icon"><img src="{{url('/')}}/template/images/resources/user-mesg3.jpg" alt=""></i>
                                                 <div class="notifi-meta"> <span>02:34PM</span>
                                                     <h4><a href="#" title="">Hi Teddy, Just wanted to let you...</a></h4>
                                                 </div>
                                             </li>
-                                            <li> <i class="notifi-icon"><img src="template/images/resources/user-mesg.jpg" alt=""></i>
+                                            <li> <i class="notifi-icon"><img src="{{url('/')}}/template/images/resources/user-mesg.jpg" alt=""></i>
                                                 <div class="notifi-meta"> <span>02:34PM</span>
                                                     <h4><a href="#" title="">Hi Teddy, Just wanted to let you...</a></h4>
                                                 </div>
                                             </li>
-                                            <li> <i class="notifi-icon"><img src="template/images/resources/user-mesg2.jpg" alt=""></i>
+                                            <li> <i class="notifi-icon"><img src="{{url('/')}}/template/images/resources/user-mesg2.jpg" alt=""></i>
                                                 <div class="notifi-meta"> <span>02:34PM</span>
                                                     <h4><a href="#" title="">Hi Teddy, Just wanted to let you...</a></h4>
                                                 </div>
@@ -213,7 +210,7 @@
                         <div class="col-lg-1">
                             <div class="user-head">
                                 <div class="admin">
-                                    <div class="admin-avatar"><img src="template/images/resources/admin.png" alt=""> <!-- <i class="online"></i> --> </div>
+                                    <div class="admin-avatar"><img src="{{url('/')}}/template/images/resources/admin.png" alt=""> <!-- <i class="online"></i> --> </div>
                                 </div>
                                 <div class="drop setting"> <span class="drop-head"><?php echo $user = Auth::user()->name;?><i>30 days trial</i></span>
                                     <ul class="drop-meta">
@@ -266,27 +263,27 @@
                                         <li class="messages"><a href="#" title=""><i class="fa fa-envelope-o"></i></a><span class="blue-bg">10</span>
                                             <div class="drop messages"> <span class="drop-head">3 New Message <i class="fa fa-pencil-square-o"></i></span>
                                                 <ul class="drop-meta">
-                                                    <li> <i class="notifi-icon"><img src="template/images/resources/user-mesg.jpg" alt=""></i>
+                                                    <li> <i class="notifi-icon"><img src="{{url('/')}}/template/images/resources/user-mesg.jpg" alt=""></i>
                                                         <div class="notifi-meta"> <span>02:34PM</span>
                                                             <h4><a href="#" title="">Hi Teddy, Just wanted to let you...</a></h4>
                                                         </div>
                                                     </li>
-                                                    <li> <i class="notifi-icon"><img src="template/images/resources/user-mesg2.jpg" alt=""></i>
+                                                    <li> <i class="notifi-icon"><img src="{{url('/')}}/template/images/resources/user-mesg2.jpg" alt=""></i>
                                                         <div class="notifi-meta"> <span>02:34PM</span>
                                                             <h4><a href="#" title="">Hi Teddy, Just wanted to let you...</a></h4>
                                                         </div>
                                                     </li>
-                                                    <li> <i class="notifi-icon"><img src="template/images/resources/user-mesg3.jpg" alt=""></i>
+                                                    <li> <i class="notifi-icon"><img src="{{url('/')}}/template/images/resources/user-mesg3.jpg" alt=""></i>
                                                         <div class="notifi-meta"> <span>02:34PM</span>
                                                             <h4><a href="#" title="">Hi Teddy, Just wanted to let you...</a></h4>
                                                         </div>
                                                     </li>
-                                                    <li> <i class="notifi-icon"><img src="template/images/resources/user-mesg.jpg" alt=""></i>
+                                                    <li> <i class="notifi-icon"><img src="{{url('/')}}/template/images/resources/user-mesg.jpg" alt=""></i>
                                                         <div class="notifi-meta"> <span>02:34PM</span>
                                                             <h4><a href="#" title="">Hi Teddy, Just wanted to let you...</a></h4>
                                                         </div>
                                                     </li>
-                                                    <li> <i class="notifi-icon"><img src="template/images/resources/user-mesg2.jpg" alt=""></i>
+                                                    <li> <i class="notifi-icon"><img src="{{url('/')}}/template/images/resources/user-mesg2.jpg" alt=""></i>
                                                         <div class="notifi-meta"> <span>02:34PM</span>
                                                             <h4><a href="#" title="">Hi Teddy, Just wanted to let you...</a></h4>
                                                         </div>
@@ -298,7 +295,7 @@
                                     
                                     <div class="user-head">
                                     <div class="admin">
-                                        <div class="admin-avatar"> <img src="template/images/resources/admin.png" alt=""> <i class="online"></i> </div>
+                                        <div class="admin-avatar"> <img src="{{url('/')}}/template/images/resources/admin.png" alt=""> <i class="online"></i> </div>
                                     </div>
                                     <div class="drop setting"> <span class="drop-head">stifen Doe <i>30 days trial</i></span>
                                         <ul class="drop-meta">
@@ -332,9 +329,9 @@
                             </div>
             <!-- responsive header -->
             <div class="panel-body">
-              <form method="post" enctype="multipart/form-data" action="{{ ('/add_product') }}" role="form">
+              <form method="post" enctype="multipart/form-data" action="{{ ('/update_product') }}" role="form">
                      {{ csrf_field() }} 
-                     
+             <?php foreach ($products as $data) ?>
               <div class="content-area">
                 <div class="sub-bar">
                   <div class="sub-title">
@@ -342,7 +339,7 @@
                     <span>Welcome To web Admin Panel!</span>
                   </div>
                   <ul class="bread-crumb">
-                    <li><a href="{{ url('/home')}}" title="">Home</a></li>
+                    <li><a href="#" title="">Home</a></li>
                     <li>Dashbord</li>
                   </ul>
                 </div>
@@ -356,54 +353,57 @@
 						  <div class="row">
 							<div class="col-md-12">
 							  <label>product name</label>
-							  <input type="text" placeholder="Enter Product Name" name="product_name" value="{{ old('product_name')}}">
+                              <input type="hidden" name="product_id" value="<?php echo $data->id;?>">
+							  <input type="text" placeholder="Enter Product Name" name="product_name" value="<?php echo $data->product_name;?>">
                               @if ($errors->has('product_name'))
                         <div class="error">{{ $errors->first('product_name') }}</div>
                         @endif
 							</div>
 							
-							<div class="col-md-12">
-							  <label>category</label><a href="#" title="" class="btn-st blu-clr" style="float: right;" data-toggle="modal" data-target="#myModal">Add Category</a>
-							  <select name="category" id="cat">
-                                <option>Select Category</option>
-                                @foreach($category as $key => $value)
+							<div class="col-md-6">
+							  <label>category</label>
+							  <select name="category" id="cat" value="<?php echo $data->category;?>">
+                                
+                                <option value="<?php echo $data->category;?>"><?php echo $data->category;?></option>
+                                 @foreach($category as $key => $value)
                                     <option value="{{$value->category_id}}">{{$value->category_name}}</option> 
                             @endforeach
 							  </select>
-
 							</div>
-
                             @if ($errors->has('category'))
                         <div class="error">{{ $errors->first('category') }}</div>
                         @endif
 
 
-                        <div class="col-md-12">
-                              <label>Sub Category</label><a href="#" title="" class="btn-st blu-clr" style="float: right;" data-toggle="modal" data-target="#myModal2">Add Sub Category</a>
+                        <div class="col-md-6">
+                              <label>Sub Category</label>
+                              <select name="sub_category">
+                              <option value="<?php echo $data->sub_category;?>"><?php echo $data->sub_category;?></option>
+                          </select>
                                 <div id="sub_cat"></div>
-                              
+                             
                               
                             </div>
                             @if ($errors->has('sub_category'))
                         <div class="error">{{ $errors->first('sub_category') }}</div>
                         @endif
 							
-							<div class="col-md-12">
+							<div class="col-md-6">
 							  <div class="input-group">
 								<label>price</label>
 								<span class="input-group-addon"><i class="fa fa-dollar"></i></span>
-								<input class="form-control" name="price" placeholder="Enter Price" type="text">
+								<input class="form-control" name="price" placeholder="Enter Price" type="text" value="<?php echo $data->price;?>">
                                  </div>
                                  @if ($errors->has('price'))
                         <div class="error">{{ $errors->first('price') }}</div>
                         @endif
 							 
 							</div>
-							<div class="col-md-12">
+							<div class="col-md-6">
 							  <div class="input-group">
 								<label>discount</label>
 								<span class="input-group-addon"><i class="fa fa-percent"></i></span>
-								<input class="form-control" name="discount" placeholder="Enter Discount %" type="text">
+								<input class="form-control" name="discount" placeholder="Enter Discount %" type="text" value="<?php echo $data->discount;?>">
                                 </div>
                                 @if ($errors->has('discount'))
                         <div class="error">{{ $errors->first('discount') }}</div>
@@ -412,7 +412,7 @@
 							</div>
 							<div class="col-md-12">
 							  <label>Product Description</label>
-							  <textarea cols="30" rows="10" placeholder="Enter Product Description" name="description"></textarea>
+							  <textarea cols="30" rows="10" placeholder="Enter Product Description" name="description" value="<?php echo $data->description;?>"><?php echo $data->description;?></textarea>
                               </div>
                               @if ($errors->has('description'))
                         <div class="error">{{ $errors->first('description') }}</div>
@@ -420,13 +420,13 @@
 							
 							
 							<div class="col-md-12"> 
-							  <label> Upload Product Image
-								<input type="file" name="product_image">
+							  <label> Upload Product Image</label>
+                                <input type="file" name="product_image" value="{{$data->product_image}} ">
                                 </div>
                                 @if ($errors->has('product_image'))
                         <div class="error">{{ $errors->first('product_image') }}</div>
                         @endif
-							  </label>
+							  
                                
 							
 							<div class="col-md-12">
@@ -453,102 +453,79 @@
   </div>
 </div>
 <div class="side-panel">
-            
-            
-
-
-    <div class="modal fade" id="myModal" role="dialog">
-    <div class="modal-dialog">
-    
-      <!-- Modal content-->
-      <div class="modal-content">
-        <div class="modal-header">
-          <button type="button" class="close" data-dismiss="modal">&times;</button>
-          <header class="w3-container w3-teal"> 
-          <h4 class="modal-title" style="float: left;color: teal;">Add Category</h4>
-        </div>
-        <form action="{{ ('/add_category') }}" role="form" method="post">    
-          {{ csrf_field() }}   
-            <div class="add-prod-from">
-                <div class="row">
-                    <div class="col-md-10">
-                        <label>Category Name</label>
-                            <input type="text" placeholder="Enter Category Name" name="category_name">
-                    </div>                 
+            <h4 class="panel-title">General Setting</h4>
+            <form method="post">
+                <div class="setting-row">
+                    <span>use night mode</span>
+                    <input type="checkbox" id="nightmode1"/> 
+                    <label for="nightmode1" data-on-label="ON" data-off-label="OFF"></label>
                 </div>
-            </div>
-                <div class="modal-footer">
-                    <footer class="w3-container w3-teal">
-                        <button type="submit" class="btn btn-default" >Submit</button>
-                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                <div class="setting-row">
+                    <span>Notifications</span>
+                    <input type="checkbox" id="switch22" /> 
+                    <label for="switch22" data-on-label="ON" data-off-label="OFF"></label>
                 </div>
-        </form>
-      </div>
-      
-    </div>
-  </div>
-
-
-<div class="modal fade" id="myModal2" role="dialog">
-    <div class="modal-dialog">
-    
-      <!-- Modal content-->
-      <div class="modal-content">
-        <div class="modal-header">
-          <button type="button" class="close" data-dismiss="modal">&times;</button>
-          <header class="w3-container w3-teal"> 
-          <h4 class="modal-title" style="float: left;color: teal;">Add Category</h4>
-        </div>
-        <form action="{{ ('/add_sub_category') }}" role="form" method="post">    
-          {{ csrf_field() }}   
-            <div class="add-prod-from">
-                <div class="row">
-                    <div class="col-md-10">
-                        <label>Category Name</label>
-                           <select name="new_category">
-                                <option>Select Category</option>
-                                @foreach($category as $key => $value)
-                                    <option value="{{$value->category_id}}">{{$value->category_name}}</option> 
-                            @endforeach
-                              </select>
-                    </div>                 
+                <div class="setting-row">
+                    <span>Notification sound</span>
+                    <input type="checkbox" id="switch33" /> 
+                    <label for="switch33" data-on-label="ON" data-off-label="OFF"></label>
                 </div>
-            </div>
-
-            <div class="add-prod-from">
-                <div class="row">
-                    <div class="col-md-10">
-                        <label>Sub Category Name</label>
-                            <input type="text" placeholder="Enter Sub Category Name" name="sub_category_name">
-                    </div>                 
+                <div class="setting-row">
+                    <span>My profile</span>
+                    <input type="checkbox" id="switch44" /> 
+                    <label for="switch44" data-on-label="ON" data-off-label="OFF"></label>
                 </div>
-            </div>
-                <div class="modal-footer">
-                    <footer class="w3-container w3-teal">
-                        <button type="submit" class="btn btn-default" >Submit</button>
-                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                <div class="setting-row">
+                    <span>Show profile</span>
+                    <input type="checkbox" id="switch55" /> 
+                    <label for="switch55" data-on-label="ON" data-off-label="OFF"></label>
                 </div>
-        </form>
-      </div>
-      
-    </div>
-  </div>
-
-
-  
-</div>
-           
-<script src="template/js/jquery.js"></script> 
-<script src="template/js/bootstrap.min.js"></script> 
-<script src="template/js/perfect-scrollbar.jquery.min.js"></script> 
-<script src="template/js/chart.min.js"></script> 
-<script src="template/js/echart.min.js"></script> 
-<script src="template/js/jquery.sparkline.min.js"></script> 
-<script src="template/js/nice-select.js"></script> 
-<script src="template/js/custom2.js"></script> 
-<script src="template/js/flatweather.min.js"></script> 
-<script src="template/js/html5lightbox.js"></script> 
-<script src="template/js/custom.js"></script><!-- scripts -->
+            </form>
+            <h4 class="panel-title">Account Setting</h4>
+            <form method="post">
+                <div class="setting-row">
+                    <span>Sub users</span>
+                    <input type="checkbox" id="switch66" /> 
+                    <label for="switch66" data-on-label="ON" data-off-label="OFF"></label>
+                </div>
+                <div class="setting-row">
+                    <span>personal account</span>
+                    <input type="checkbox" id="switch77" /> 
+                    <label for="switch77" data-on-label="ON" data-off-label="OFF"></label>
+                </div>
+                <div class="setting-row">
+                    <span>Business account</span>
+                    <input type="checkbox" id="switch88" /> 
+                    <label for="switch88" data-on-label="ON" data-off-label="OFF"></label>
+                </div>
+                <div class="setting-row">
+                    <span>Show me online</span>
+                    <input type="checkbox" id="switch99" /> 
+                    <label for="switch99" data-on-label="ON" data-off-label="OFF"></label>
+                </div>
+                <div class="setting-row">
+                    <span>Delete history</span>
+                    <input type="checkbox" id="switch101" /> 
+                    <label for="switch101" data-on-label="ON" data-off-label="OFF"></label>
+                </div>
+                <div class="setting-row">
+                    <span>Expose author name</span>
+                    <input type="checkbox" id="switch111" /> 
+                    <label for="switch111" data-on-label="ON" data-off-label="OFF"></label>
+                </div>
+            </form>
+        </div><!-- side panel -->
+<script src="{{url('/')}}/template/js/jquery.js"></script> 
+<script src="{{url('/')}}/template/js/bootstrap.min.js"></script> 
+<script src="{{url('/')}}/template/js/perfect-scrollbar.jquery.min.js"></script> 
+<script src="{{url('/')}}/template/js/chart.min.js"></script> 
+<script src="{{url('/')}}/template/js/echart.min.js"></script> 
+<script src="{{url('/')}}/template/js/jquery.sparkline.min.js"></script> 
+<script src="{{url('/')}}/template/js/nice-select.js"></script> 
+<script src="{{url('/')}}/template/js/custom2.js"></script> 
+<script src="{{url('/')}}/template/js/flatweather.min.js"></script> 
+<script src="{{url('/')}}/template/js/html5lightbox.js"></script> 
+<script src="{{url('/')}}/template/js/custom.js"></script><!-- scripts -->
 
 <script type="text/javascript">
     $(document).ready(function() {
@@ -567,7 +544,7 @@
                         
                          var data2=JSON.parse(data);
                          
-                         var toAppend = '<select name="sub_category">';
+                         var toAppend = '<select name="sub_category" value="<?php echo $data->category;?>">';
                          
                          $.each(data2, function(key, value)
                          {
