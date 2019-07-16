@@ -15,20 +15,30 @@ $PACK_NAME=$_POST["pack_name"];
 $TXN_AMOUNT = $_POST["pack_amount"];
 
 // Create an array having all required parameters for creating checksum.
-$paramList["MID"] = PAYTM_MERCHANT_MID;
+$paramList["MID"] = 'rxazcv89315285244163';
 $paramList["ORDER_ID"] = $ORDER_ID;
 $paramList["CUST_ID"] = $CUST_ID;
 $paramList["TXN_AMOUNT"] = $TXN_AMOUNT;
-$paramList["WEBSITE"] = PAYTM_MERCHANT_WEBSITE;
+$paramList["WEBSITE"] = 'WEBSTAGING';
 
-/*
-$paramList["CALLBACK_URL"] = "http://localhost/PaytmKit/pgResponse.php";
-$paramList["MSISDN"] = $MSISDN; //Mobile number of customer
-$paramList["EMAIL"] = $EMAIL; //Email ID of customer
+DB::table('vendor_subscription')->insert(
+     array(
+            'order_id'     =>   $ORDER_ID, 
+            'vendor_id'   =>   $CUST_ID,
+            'pack_name' => $PACK_NAME,
+            'pack_amount' =>$TXN_AMOUNT
+
+
+     )
+);
+
+$paramList["CALLBACK_URL"] = "http://localhost/E-commerce/resources/views/alert.blade.php";
+$paramList["MSISDN"] = 77777777; //Mobile number of customer
+// $paramList["EMAIL"] = $EMAIL; //Email ID of customer
 $paramList["VERIFIED_BY"] = "EMAIL"; //
 $paramList["IS_USER_VERIFIED"] = "YES"; //
 
-*/
+
 
 //Here checksum string will return by getChecksumFromArray() function.
 $checkSum = getChecksumFromArray($paramList,PAYTM_MERCHANT_KEY);

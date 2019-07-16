@@ -346,21 +346,22 @@
                     <li>Dashbord</li>
                   </ul>
                 </div>
+                
                 <div class="gap no-gap">
                     <div class="inner-bg">
                       <div class="element-title">
                         <h4>about product</h4>
                         <span>Please fill the form below.</span> </div>
                         
-                      <div class="add-prod-from">
+                        <div class="add-prod-from">
 						  <div class="row">
 							<div class="col-md-12">
 							  <label>product name</label>
 							  <input type="text" placeholder="Enter Product Name" name="product_name" value="{{ old('product_name')}}">
                               @if ($errors->has('product_name'))
-                        <div class="error">{{ $errors->first('product_name') }}</div>
-                        @endif
-							</div>
+                                <div class="error">{{ $errors->first('product_name') }}</div>
+                                    @endif
+							     </div>
 							
 							<div class="col-md-12">
 							  <label>category</label><a href="#" title="" class="btn-st blu-clr" style="float: right;" data-toggle="modal" data-target="#myModal">Add Category</a>
@@ -368,25 +369,34 @@
                                 <option>Select Category</option>
                                 @foreach($category as $key => $value)
                                     <option value="{{$value->category_id}}">{{$value->category_name}}</option> 
-                            @endforeach
+                                        @endforeach
 							  </select>
-
 							</div>
 
                             @if ($errors->has('category'))
-                        <div class="error">{{ $errors->first('category') }}</div>
-                        @endif
+                            <div class="error">{{ $errors->first('category') }}</div>
+                            @endif
 
 
                         <div class="col-md-12">
                               <label>Sub Category</label><a href="#" title="" class="btn-st blu-clr" style="float: right;" data-toggle="modal" data-target="#myModal2">Add Sub Category</a>
-                                <div id="sub_cat"></div>
-                              
-                              
-                            </div>
+                                <div id="sub_cat"></div> 
+                        </div>
                             @if ($errors->has('sub_category'))
-                        <div class="error">{{ $errors->first('sub_category') }}</div>
-                        @endif
+                            <div class="error">{{ $errors->first('sub_category') }}</div>
+                            @endif
+
+                        <div class="col-md-12">
+                              <label>Child Category-1</label>
+                                <div id="child_cat"></div>
+                            </div>
+
+                        <div class="col-md-12">
+                              <label>Child Category-2</label>
+                                <div id="child_cat2"></div>
+                            </div>
+
+
 							
 							<div class="col-md-12">
 							  <div class="input-group">
@@ -395,8 +405,8 @@
 								<input class="form-control" name="price" placeholder="Enter Price" type="text">
                                  </div>
                                  @if ($errors->has('price'))
-                        <div class="error">{{ $errors->first('price') }}</div>
-                        @endif
+                                    <div class="error">{{ $errors->first('price') }}</div>
+                                    @endif
 							 
 							</div>
 							<div class="col-md-12">
@@ -406,8 +416,8 @@
 								<input class="form-control" name="discount" placeholder="Enter Discount %" type="text">
                                 </div>
                                 @if ($errors->has('discount'))
-                        <div class="error">{{ $errors->first('discount') }}</div>
-                        @endif
+                                <div class="error">{{ $errors->first('discount') }}</div>
+                                @endif
 							  
 							</div>
 							<div class="col-md-12">
@@ -415,18 +425,22 @@
 							  <textarea cols="30" rows="10" placeholder="Enter Product Description" name="description"></textarea>
                               </div>
                               @if ($errors->has('description'))
-                        <div class="error">{{ $errors->first('description') }}</div>
-                        @endif
+                                <div class="error">{{ $errors->first('description') }}</div>
+                                @endif
 							
 							
 							<div class="col-md-12"> 
-							  <label> Upload Product Image
+							  <label> Upload Product Image</label>
 								<input type="file" name="product_image">
                                 </div>
                                 @if ($errors->has('product_image'))
-                        <div class="error">{{ $errors->first('product_image') }}</div>
-                        @endif
-							  </label>
+                                <div class="error">{{ $errors->first('product_image') }}</div>
+                                @endif
+							  
+                              <div class="col-md-12"> 
+                              <label> Upload Images</label>
+                                <input type="file"  name="attachment[]" multiple>
+                                </div>
                                
 							
 							<div class="col-md-12">
@@ -555,7 +569,7 @@
         $('select[name="category"]').on('change', function() {
             var category_id = $(this).val();
 
-             // alert(category_id);
+             //alert(category_id);
             if(category_id) {
                 $.ajax({
                     url: "{{ URL::route('sub_category')}}",
@@ -586,6 +600,92 @@
         });
     });
 </script>
+
+
+<script type="text/javascript">
+    $('#sub_cat').on('change',function()
+    {
+  
+     var subcategory_id1 = $('select[name="sub_category"]').val();            
+        // alert(subcategory_id1);
+          
+          if(subcategory_id1) {
+                $.ajax({
+                    url: "{{ URL::route('child_category1')}}",
+                    method: "get",
+                    data: {'subcategory_id': subcategory_id1  },
+                    
+                    success:function(data) 
+                    {
+
+                        // alert(data);
+                        // exit();
+                        
+                         var data2=JSON.parse(data);
+                         
+                         var toAppend = '<select name="child_category">';
+                         
+                         $.each(data2, function(key, value)
+                         {
+                             toAppend += '<option value="'+value.child_category_id+'">'+value.childcategory_name+'</option>';
+                        });
+
+
+
+                    $('#child_cat').html(toAppend);
+                
+                    }
+                });
+            }else{
+                $('select[name="child_category"]').empty();
+            }  
+             
+            
+        
+    });
+</script>
+
+
+<script type="text/javascript">
+    $('#child_cat').on('change',function()
+    {
+  
+     var childcat_id1 = $('select[name="child_category"]').val();            
+//alert(childcat_id1);
+          if(childcat_id1) {
+                $.ajax({
+                    url: "{{ URL::route('child_category2')}}",
+                    method: "get",
+                    data: {'childcat_id1': childcat_id1  },
+                    
+                    success:function(data) 
+                    {
+                        alert(data);
+
+                        var data2=JSON.parse(data);
+                         
+                         var toAppend = '<select name="child_category2">';
+                         
+                         $.each(data2, function(key, value)
+                         {
+                             toAppend += '<option value="'+value.child2_category_id+'">'+value.childcategory2_name+'</option>';
+                        });
+
+
+
+                    $('#child_cat2').html(toAppend);
+                
+                    }
+                });
+            }else{
+                $('select[name="child_category2"]').empty();
+            }  
+             
+            
+        
+    });
+</script>
+
 
 </body>
 </html>

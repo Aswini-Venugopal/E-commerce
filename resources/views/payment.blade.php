@@ -224,7 +224,7 @@
                   <li> <a href="#" title=""><i class="fa fa-calendar"></i>Calender</a> </li>
                   <li> <a href="#" title=""><i class="fa fa-align-right"></i>Balance Report</a> </li>
                 </ul>
-                <span class="drop-bottom"><a href="#" title=""><i class="fa fa-sign-out"></i>log Out</a></span> </div>
+                <span class="drop-bottom"><a href="{{ route('logout') }}" title=""><i class="fa fa-sign-out"></i>log Out</a></span> </div>
             </div>
           </div>
         </div>
@@ -357,8 +357,8 @@
                     </div>
                     <div class="cart-page">
                       
-                    <!--   <?php //if (isset($frst_pack_data)) {
-                       ?> -->
+                       <?php if (isset($frst_pack_data)) {
+                       ?>
                       
                       <div class="gap no-gap">
                         <div class="cart-summary">
@@ -380,7 +380,7 @@
                             <?php $user=Auth::user()->id;?>
                              <input type="hidden" name="cust_id" value="<?php echo $user;?>">
                                               </ul>
-                        <?php// } ?>
+                        <?php } ?>
                           <div class="total-btns"> <button type="submit" class="btn-st drk-gry-clr" href="#" title="">Place order</button> <a class="btn-st drk-gry-clr" href="{{ route('home') }}" title="">Cancel order</a> </div>
                         </div>
                       </div>
@@ -423,8 +423,14 @@
                             <li>Delivery Charges:<span>$12</span></li>
                             <li>Tax:<span>$5</span></li>
                             <li>Payable Amount:<span>$460</span></li>
+                            <?php $user=Auth::user()->id;?>
                             <input type="hidden" name="pack_name" value="Monthly pack">
                               <input type="hidden" name="pack_amount" value="200.12">
+                               <input type="hidden" id="ORDER_ID" tabindex="1" maxlength="20" size="20"
+            name="ORDER_ID" autocomplete="off"
+            value="<?php echo  "ORDS" . rand(10000,99999999)?>">
+<input type="hidden" name="cust_id" value="<?php echo $user;?>">
+                                              </ul>
                           </ul>
                           <div class="total-btns"> <button type="submit" class="btn-st drk-gry-clr" >Place order</button> <a class="btn-st drk-gry-clr" href="{{ route('home') }}" title="">Cancel order</a> </div>
                         </div>
@@ -446,7 +452,7 @@
                     <span>Welcome To web Admin Panel!</span>
                   </div>
                   <ul class="bread-crumb">
-                    <li><a href="#" title="">Home</a></li>
+                    <li><a href="{{ url('/home')}}" title="">Home</a></li>
                     <li>Dashbord</li>
                   </ul>
                 </div>
@@ -470,8 +476,14 @@
                             <li>Delivery Charges:<span>$12</span></li>
                             <li>Tax:<span>$5</span></li>
                             <li>Payable Amount:<span>$460</span></li>
+                            <?php $user=Auth::user()->id;?>
                             <input type="hidden" name="pack_name" value="Yearly pack">
                             <input type="hidden" name="pack_amount" value="300.12">
+                             <input type="hidden" id="ORDER_ID" tabindex="1" maxlength="20" size="20"
+            name="ORDER_ID" autocomplete="off"
+            value="<?php echo  "ORDS" . rand(10000,99999999)?>">
+<input type="hidden" name="cust_id" value="<?php echo $user;?>">
+                                              </ul>
                           </ul>
                           <div class="total-btns"> <button type="submit" class="btn-st drk-gry-clr" >Place order</button> <a class="btn-st drk-gry-clr" href="{{ route('home') }}" title="">Cancel order</a> </div>
                         </div>

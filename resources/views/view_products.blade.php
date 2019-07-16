@@ -370,14 +370,13 @@
                         </thead>
                         <tbody>
 								<?php
-									if(isset($products) && !empty($products)){
-									
-									foreach ($products as $value) { 
-									
+									if(isset($products) && !empty($products)){									
+									foreach ($products as $value) { 									
 								?>
                           <tr>
 
-                <td><?php echo $value->product_name;?></td> 
+                <td><?php echo $value->product_name;?></td>
+
                 <td><?php echo $value->category;?></td> 
                 <td><?php echo $value->sub_category;?></td>                    
                 <td><?php echo $value->price;?></td> 

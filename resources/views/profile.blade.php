@@ -405,7 +405,7 @@
                         <div class="col-md-12">
                           <div class="sub-area">
                             <ul>
-                              <li><a href="#" title=""><i class="fa fa-briefcase"></i>Over View </a></li>
+                              <li><a href="#" title=""><i class="fa fa-briefcase"></i>View Profile</a></li>
                               <li><a href="edit_profile" title=""><i class="fa fa-gear"></i>Account Settings </a></li>
                               <li><a href="#" title=""><i class="fa fa-adjust"></i>Customers </a></li>
                             </ul>
@@ -422,13 +422,12 @@
 								<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut consectet uer adipiscing elit laoreet dolore magna.</p>
 							  </div>
 							</div>
-							<div class="col-md-6">
+							<!-- <div class="col-md-6">
 							  <ul class="vlaue-show">
-								<!-- <li> <span>37</span> <a href="#" title="">Products</a> </li>
+								<li> <span>37</span> <a href="#" title="">Products</a> </li>
 								<li> <span>59</span> <a href="#" title="">New Orders</a> </li>
-								<li> <span>60</span> <a href="#" title="">Customers</a> </li> -->
-							  </ul>
-							</div>
+								<li> <span>60</span> <a href="#" title="">Customers</a> </li> 
+							</div> -->
 						</div> 
                       </div>
                     </div>
@@ -437,234 +436,50 @@
                 <?php if (count($sub_data)!='') { ?>
                 	
                 <div class="row">
+
                   <div class="col-md-6 col-sm-6 col-xs-12">
-                    <div class="widget">
-                      <div class="widget-title">
-                      	
-                        <h4>your Products</h4>
-                        <ul class="widget-controls">
-							<li title="Refresh" class="refresh-content"><i class="fa fa-refresh"></i></li>
-							<li title="Maximize" class="expand-content"><i class="icon-frame"></i></li>
-							<li title="More Options" class="more-option"><i class="ti-more-alt"></i></li>
-						</ul>
-                      </div>
-                      <div class="widget-peding">
-                        <ul class="activity-meta">
-                          <li>
-                            <div class="activity-ico"> <img src="template/images/icon-6.html" alt=""> <span>4515 <i>total sales</i></span> </div>
-                            <div class="spark">
-                              <div class="sparkline11"></div>
-                            </div>
-                          </li>
-                          <li>
-                            <div class="activity-ico"> <img src="template/images/icon-7.html" alt=""> <span>2089<i>new sales</i></span> </div>
-                            <div class="spark">
-                              <div class="sparkline12"></div>
-                            </div>
-                          </li>
-                        </ul>
-                        <table class="member-activity table table-responsive">
-                          <thead>
-                            <tr>
-                              <th>member</th>
-                              <th>earnings</th>
-                              <th>case</th>
-                              <th>closed</th>
-                              <th>rate</th>
-                            </tr>
-                          </thead>
-                          <tbody>
-                            <tr>
-                              <td><i><img src="template/images/resources/active-member1.jpg" alt=""></i> <span>tom</span></td>
-                              <td>$18</td>
-                              <td>65</td>
-                              <td>28</td>
-                              <td>80%</td>
-                            </tr>
-                            <tr>
-                              <td><i><img src="template/images/resources/active-member2.jpg" alt=""></i> <span>rifn</span></td>
-                              <td>$198</td>
-                              <td>99</td>
-                              <td>68</td>
-                              <td>90%</td>
-                            </tr>
-                            <tr>
-                              <td><i><img src="template/images/resources/active-member3.jpg" alt=""></i> <span>tom</span></td>
-                              <td>$18</td>
-                              <td>65</td>
-                              <td>28</td>
-                              <td>80%</td>
-                            </tr>
-                            <tr>
-                              <td><i><img src="template/images/resources/active-member4.jpg" alt=""></i> <span>rifn</span></td>
-                              <td>$198</td>
-                              <td>99</td>
-                              <td>68</td>
-                              <td>90%</td>
-                            </tr>
-                            <tr>
-                              <td><i><img src="template/images/resources/active-member3.jpg" alt=""></i> <span>Daniel</span></td>
-                              <td>$198</td>
-                              <td>99</td>
-                              <td>68</td>
-                              <td>90%</td>
-                            </tr>
-                          </tbody>
-                        </table>
-                      </div>
-                    </div>
+
+                    
                     <!-- user list --> 
-                  </div>
-                  <div class="col-md-6 col-sm-6 col-xs-12">
-                    <div class="widget">
-                      <div class="widget-title">
-                        <h4>New Orders and Enquiries</h4>
-                        <ul class="widget-controls">
-							<li title="Refresh" class="refresh-content"><i class="fa fa-refresh"></i></li>
-							<li title="Maximize" class="expand-content"><i class="icon-frame"></i></li>
-							<li title="More Options" class="more-option"><i class="ti-more-alt"></i></li>
-						</ul>
-                      </div>
-                      <div class="widget-peding">
-                        <ul class="feeds">
-                          <li class="green"> <span class="date">25 Sec Ago</span>
-                            <h5>Nulla Vel Metus Scelerue Commodo</h5>
-                          </li>
-                          <li class="green"> <span class="date">05 Sec Ago</span>
-                            <h5>Completed Layout Examples</h5>
-                          </li>
-                          <li class="blue"> <span class="date">55 Sec Ago</span>
-                            <h5>New Updated Has Been Installed </h5>
-                          </li>
-                          <li class="yellow"> <span class="date">25 Min Ago</span>
-                            <h5>4 Friends Request Accepted</h5>
-                          </li>
-                          <li class="red"> <span class="date">2 Hour Ago</span>
-                            <h5>Daisy Has Joined Your Team</h5>
-                          </li>
-                          <li class="green"> <span class="date">25 Sec Ago</span>
-                            <h5>Nulla Vel Metus Scelerue Commodo</h5>
-                          </li>
-                          <li class="green"> <span class="date">05 Sec Ago</span>
-                            <h5>Completed Layout Examples</h5>
-                          </li>
-                          <li class="blue"> <span class="date">55 Sec Ago</span>
-                            <h5>New Updated Has Been Installed </h5>
-                          </li>
-                        </ul>
-                      </div>
-                    </div>
-                    <!-- user list --> 
-                  </div>
+                  </div><br><br>
+                
                 </div>
-                <div class="row">
-                  <div class="col-md-6">
-                    <div class="widget">
-                      <div class="widget-title">
-                        <h4>customer support</h4>
-                        <ul class="widget-controls">
-							<li title="Refresh" class="refresh-content"><i class="fa fa-refresh"></i></li>
-							<li title="Maximize" class="expand-content"><i class="icon-frame"></i></li>
-							<li title="More Options" class="more-option"><i class="ti-more-alt"></i></li>
-						</ul>
-                      </div>
-                      <div class="widget-peding">
-                        <ul class="q-comments support">
-                          <li>
-                            <div class="comenter"> <img src="template/images/resources/q-comment1.jpg" alt=""> </div>
-                            <div class="comment-detail">
-                              <h5>Michael Baker</h5>
-                              <p>Cras sit amet nibh libero, in gravida nulla. Nulla vel metus sc risque ante sollicitudin commodo. </p>
-                            </div>
-                            <ul class="comment-date">
-                              <li><span>October 21, 2017</span></li>
-                              <li class="status mango"><span>open</span></li>
-                            </ul>
-                          </li>
-                          <li>
-                            <div class="comenter"> <img src="template/images/resources/q-comment1.jpg" alt=""> </div>
-                            <div class="comment-detail">
-                              <h5>Michael Baker</h5>
-                              <p>Cras sit amet nibh libero, in gravida nulla. Nulla vel metus sc risque ante sollicitudin commodo. </p>
-                            </div>
-                            <ul class="comment-date">
-                              <li><span>October 21, 2017</span></li>
-                              <li class="status berry"><span>open</span></li>
-                            </ul>
-                          </li>
-                          <li>
-                            <div class="comenter"> <img src="template/images/resources/q-comment1.jpg" alt=""> </div>
-                            <div class="comment-detail">
-                              <h5>Michael Baker</h5>
-                              <p>Cras sit amet nibh libero, in gravida nulla. Nulla vel metus sc risque ante sollicitudin commodo. </p>
-                            </div>
-                            <ul class="comment-date">
-                              <li><span>October 21, 2017</span></li>
-                              <li class="status carrot"><span>open</span></li>
-                            </ul>
-                          </li>
-                        </ul>
-                      </div>
-                    </div>
-                    <!-- user list --> 
-                  </div>
-                  <!-- customer support widget -->
-                  <div class="col-md-6">
-                    <div class="widget">
-                      <div class="widget-title">
-                        <h4>Quick Actions</h4>
-                        <ul class="widget-controls">
-							<li title="Refresh" class="refresh-content"><i class="fa fa-refresh"></i></li>
-							<li title="Maximize" class="expand-content"><i class="icon-frame"></i></li>
-							<li title="More Options" class="more-option"><i class="ti-more-alt"></i></li>
-						</ul>
-                      </div>
-                      <div class="widget-peding">
-                        <ul class="q-comments">
-                          <li>
-                            <div class="comenter"> <img src="template/images/resources/q-comment1.jpg" alt=""> </div>
-                            <div class="comment-detail">
-                              <h5>Michael Baker</h5>
-                              <p>Cras sit amet nibh libero, in gravida nulla. Nulla vel metus sc risque ante sollicitudin commodo. </p>
-                            </div>
-                            <ul class="comment-date">
-                              <li class="mango"><span>October 21, 2017</span></li>
-                              <li><span>9:30-13:00</span></li>
-                            </ul>
-                            <div class="approv-reject"> <a class="approve active" href="#" title="">approved</a> <a class="rejected" href="#" title="">reject</a> </div>
-                          </li>
-                          <li>
-                            <div class="comenter"> <img src="template/images/resources/q-comment2.jpg" alt=""> </div>
-                            <div class="comment-detail">
-                              <h5>Natasha Kim</h5>
-                              <p>Cras sit amet nibh libero, in gravida nulla. Nulla vel metus sc risque ante sollicitudin commodo. </p>
-                            </div>
-                            <ul class="comment-date">
-                              <li class="carrot"><span>October 21, 2017</span></li>
-                              <li><span>9:30-13:00</span></li>
-                            </ul>
-                            <div class="approv-reject"> <a class="approve" href="#" title="">approved</a> <a class="rejected active" href="#" title="">reject</a> </div>
-                          </li>
-                          <li>
-                            <div class="comenter"> <img src="template/images/resources/q-comment3.jpg" alt=""> </div>
-                            <div class="comment-detail">
-                              <h5>Jason Bourne</h5>
-                              <p>Cras sit amet nibh libero, in gravida nulla. Nulla vel metus sc risque ante sollicitudin commodo. </p>
-                            </div>
-                            <ul class="comment-date">
-                              <li class="berry"><span>October 21, 2017</span></li>
-                              <li><span>9:30-13:00</span></li>
-                            </ul>
-                            <div class="approv-reject"> <a class="approve active" href="#" title="">approved</a> <a class="rejected" href="#" title="">reject</a> </div>
-                          </li>
-                        </ul>
-                      </div>
-                    </div>
-                    <!-- user list --> 
-                  </div>
-                  <!-- quick action widget --> 
-                </div>
+                <div class="info-section">
+                                        <div class="panel-widget">
+											<div class="mini-stats">
+												<p>Bitcoin Wallet</p>
+												<span><i class="fa fa-ellipsis-v"></i></span>
+												<h3>$2,501</h3>
+												<em>Ratings by Market Capitalization</em>
+												<i class="fa fa-bitcoin"></i> 
+											</div>
+                                        </div>
+
+                                        <div class="panel-widget">
+                                            <div class="mini-stats purpal-grdnt">
+                                                <p>Bitcoin Wallet</p>
+                                                <span><i class="fa fa-ellipsis-v"></i></span>
+                                                <h3>$7,101</h3>
+												<em>Ratings by Market Capitalization</em>
+                                                <i class="fa fa-dollar"></i> 
+											</div>
+                                        </div>
+
+                                        <div class="panel-widget">
+                                            <div class="mini-stats blue-grdnt">
+                                                <p>Bitcoin Wallet</p>
+                                                <span><i class="fa fa-ellipsis-v"></i></span>
+                                                <h3>$9,102</h3>
+												<em>Ratings by Market Capitalization</em>
+                                                <i class="fa fa-ruble"></i> 
+											</div>
+                                        </div>
+
+                                    </div>
+
+
               </div>
+
               <?php 
                 }else{ ?>
               

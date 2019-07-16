@@ -58,11 +58,8 @@
                                             </li>
                                             <li class="menu-item-has-children"> <a title=""><i class="fa fa-laptop"></i><span>Products</span></a>
                                                 <ul class="mega">
-                                                    <li><a href="temp/product.html" title="">product</a></li>
-                                                    <li><a href="temp/product-detail.html">product-detail</a></li>
-                                                    <li><a href="temp/product-order.html">product-order</a></li>
-                                                    <li><a href="temp/product-add.html">add product</a></li>
-                                                    <li><a href="temp/product-cart.html">product cart</a></li>
+                                                    <li><a href="{{ url('add_redirect')}}">Add product</a></li>
+                                                    <li><a href="{{ url('view_product')}}">View Product</a></li>
                                                 </ul>
                                             </li>
                                             <li class="menu-item-has-children"> <a title="#"><i class="fa fa-bookmark-o"></i><span>Previous Orders</span></a>
@@ -294,8 +291,12 @@
 
                       <div class="col-md-6 col-sm-12 field">
                         <label>State <span>*</span> </label>
-                        	<select name="state" value="{{ old('state', Auth::user()->state)}}">
-                         <option><?php echo Auth::user()->state;?></option>
+                        <?php foreach ($state_name as $value) {
+                            ?>
+                        
+                        
+                        	<select name="state" value="{{ old('state', <?php echo $value->name;?>)}}" > 
+                         <option><?php echo $value->name;?></option><?php } ?>
          					@foreach($state as $key => $value)
          					<option value="{{$value->id}}">{{$value->name}}</option>
          					@endforeach
@@ -309,8 +310,11 @@
 
                       <div class="col-md-6 col-sm-6 field">
                         <label>District<span>*</span> </label>
+                        <?php foreach ($dist_name as $key =>$value) {
+                            ?>
                         <select name="district">
-                              <option value="<?php echo Auth::user()->district;?>"><?php echo Auth::user()->district;?></option></select>
+                              <option value="<?php echo Auth::user()->district;?>"><?php echo $value->name;?></option></select>
+                          <?php }?>
                         <div id="ddd"></div>                	 
                               					
                         
@@ -399,7 +403,7 @@
 							<span class="upload-image">upload logo</span>
 						  <label> <span>upload</span>
 							<input type="file"  name="logo" value="{{ old('logo', Auth::user()->logo)}}" >
-							
+							<img src="<?php echo Auth::user()->logo; ?>"  style="width: 50px; height: 50px ;">
 						  </label>
 						  @if ($errors->has('logo'))
     					<div class="error">{{ $errors->first('logo') }}</div>
@@ -409,7 +413,8 @@
 							<span class="upload-image">upload image</span>
 						  <label> <span>upload</span>
 							<input type="file" value="{{ old('image', Auth::user()->image)}}" name="image">
-							
+							<img src="<?php echo Auth::user()->image; ?>"  style="width: 50px; height: 50px ;">
+                    
 						  </label>
 						  @if ($errors->has('image'))
     					<div class="error" >{{ $errors->first('image') }}</div>
