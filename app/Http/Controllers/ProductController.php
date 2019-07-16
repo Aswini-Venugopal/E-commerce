@@ -57,6 +57,8 @@ class ProductController extends Controller
                 $product_details['product_name']=$request->input('product_name');
                 $product_details['category']=$request->input('category');
                 $product_details['sub_category']=$request->input('sub_category');
+                $product_details['child_category']=$request->input('child_category');
+                $product_details['second_child_category']=$request->input('child_category2');
                 $product_details['price']=$request->input('price');
                 $product_details['discount']=$request->input('discount');
                 $product_details['description']=$request->input('description');
@@ -69,10 +71,26 @@ class ProductController extends Controller
                       $image->move(public_path().'/product_image/',$image->getClientOriginalName());
                       $product_details['product_image']=$name;
                 
-                      DB::table('products')->insert($product_details);
-                      return redirect('/home');
+                     
                     }
-      }
+                    DB::table('products')->insert($product_details);
+                           return redirect('/home');
+                   
+
+                   // $files = $request->file('attachment');
+                   // if($request->hasFile('attachment'))
+                   //    {
+                   //        foreach($request->file('attachment') as $file) {
+                   //          $namee=$file->getClientOriginalName();
+                   //          // print_r($namee."<br>");
+                   //          // exit();
+                   //          $value->move(public_path().'/product_image/'.$namee->getClientOriginalName());  
+                   //          $product_details['image_gallery']=$namee; 
+                   //        }
+                   //    }
+
+
+    }
 
 
     public function delete_product($id)
@@ -92,18 +110,51 @@ class ProductController extends Controller
          echo json_encode($sub_catt);
     }
 
+
+    public function child_category1(Request $request)
+    {
+        
+      $sub_id=$request->get('subcategory_id');
+      $child_catt= DB::table("tbl_child_category_one")->where("subcategory_id",$sub_id)->get();
+      echo json_encode($child_catt);
+    }
+
+
+    public function child_category2(Request $request)
+    {
+
+       
+       $child_id=$request->get('childcat_id1');
+      
+      $child_catt= DB::table("tbl_child_category_two")->where("child_category_id",$child_id)->get();
+      // print_r($child_catt);
+      echo json_encode($child_catt);
+    }
+
+
+
     public function view_product()
     {
       $vendor_id=Auth::user()->id;
       $products= DB::table("products")->where("vendor_id",$vendor_id)->get();
-
-
+      foreach ($products as $value) {
+        $category_id=$value->category;
+        $sub_name=$value->sub_category;
+        
       
+      $cat_name= DB::table("tbl_categories")->select('category_name')->where("category_id",$category_id)->get();
+       $sub_cat_name= DB::table("tbl_sub_category")->select('subcategory_name')->where("subcategory_id",$sub_name)->get();
+      // print_r($cat_name);
+      // print_r($sub_cat_name);
+      // exit();
 
-      return view('view_products')->with('products',$products);
+      }
+      return view('view_products')->with('products',$products)->with('category',$cat_name)->with('sub',$sub_cat_name);
     }
 
-    public function edit_product($id){
+
+    public function edit_product($id)
+    {
       
       $products= DB::table("products")->where("id",$id)->get();
        $category = DB::table('tbl_categories')->get();
@@ -135,6 +186,8 @@ class ProductController extends Controller
                 $product_details['product_name']=$request->input('product_name');
                 $product_details['category']=$request->input('category');
                 $product_details['sub_category']=$request->input('sub_category');
+                $product_details['child_category']=$request->input('child_category');
+                $product_details['second_child_category']=$request->input('child_category2');
                 $product_details['price']=$request->input('price');
                 $product_details['discount']=$request->input('discount');
                 $product_details['description']=$request->input('description');
@@ -166,15 +219,16 @@ class ProductController extends Controller
       $category_name=$request->input('category_name');
       $new_category = array('category_name' => $category_name);
       DB::table('tbl_categories')->insert($new_category);
-                      return redirect('/add_redirect');
+      return redirect('/add_redirect');
 
     }
 
-    public function add_sub_category(Request $request){
-       $new_category=$request->input('new_category');
-       $new_sub_category=$request->input('sub_category_name');
+    public function add_sub_category(Request $request)
+    {
+      $new_category=$request->input('new_category');
+      $new_sub_category=$request->input('sub_category_name');
       $update_sub_category = array('category_id' =>$new_category ,'subcategory_name'=>$new_sub_category );
       DB::table('tbl_sub_category')->insert($update_sub_category);
-                      return redirect('/add_redirect');
+      return redirect('/add_redirect');
     }
 }

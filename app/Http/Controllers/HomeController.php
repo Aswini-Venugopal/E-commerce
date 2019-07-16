@@ -40,7 +40,16 @@ class HomeController extends Controller
     {
         $countryname = DB::table('countries')->get();
         $statename = DB::table('states')->get();
-        return view('edit_profile')->with('country',$countryname)->with('state',$statename);
+        
+        $state=Auth::user()->state;
+        $dist=Auth::user()->district;
+        
+        $state_data=DB::table('states')->select('name')->where('id',$state)->get();
+        
+        $district_data=DB::table('districts')->select('name')->where('id',$dist)->get();
+        
+       
+        return view('edit_profile')->with('country',$countryname)->with('state',$statename)->with('state_name',$state_data)->with('dist_name',$district_data);
     }
 
     public function district(Request $request)
