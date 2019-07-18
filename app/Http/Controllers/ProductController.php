@@ -13,6 +13,7 @@ use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Redirect;
+
 //use Illuminate\Support\Facades\validator;
 use Illuminate\Foundation\Validation\ValidatesRequests;
 use Auth;
@@ -20,27 +21,33 @@ use Validator;
 
 class ProductController extends Controller
 {
+    
+
     public function paytm_redirect()
-      {
+    {
         return redirect('/home');
-      }
+    }
+    
     public function add_redirect()
-      {
-         $category = DB::table('tbl_categories')->get();
+    {
+        $category = DB::table('tbl_categories')->get();
         
         $sub_category = DB::table('tbl_sub_category')->get();
              
         return view('product-add')->with('category',$category)->with('sub_category',$sub_category);
         
-      }
+    }
 
 
     public function add_product(Request $request)
-      {
+    {
           
           $validator = Validator::make($request->all(),[
               'product_name' => 'required',          
-              'category' => 'required|not_in:Select Category',
+              'category' => 'required|not_in:Select Category',              
+              'sub_category' => 'required|not_in:Select sub_category',
+              'child_category' => 'required|not_in:Select child_category',
+              'child_category2' => 'required|not_in:Select child_category2',
               'price' => 'required|numeric',
               'discount' => 'numeric',            
               'product_image' => 'required|mimes:jpeg,png'
@@ -73,24 +80,48 @@ class ProductController extends Controller
                 
                      
                     }
-                    DB::table('products')->insert($product_details);
-                           return redirect('/home');
+                    // DB::table('products')->insert($product_details);
+                           
                    
 
-                   // $files = $request->file('attachment');
-                   // if($request->hasFile('attachment'))
-                   //    {
-                   //        foreach($request->file('attachment') as $file) {
-                   //          $namee=$file->getClientOriginalName();
-                   //          // print_r($namee."<br>");
-                   //          // exit();
-                   //          $value->move(public_path().'/product_image/'.$namee->getClientOriginalName());  
-                   //          $product_details['image_gallery']=$namee; 
-                   //        }
-                   //    }
+                   if($request->hasfile('attachment'))
+                {
 
+                   foreach($request->file('attachment') as $image)
+                   {
+                       $name=URL::to("/").'/all_product_images/'.$image->getClientOriginalName();
+                       
+                       $image->move(public_path().'/all_product_images/', $name);
+                       $data[] = $name;
+                      $product_details['image_gallery']= implode("#@#", $data);
+
+                   }
+                  
+                }
+                  DB::table('products')->insert($product_details);
+                  return redirect('/home');
 
     }
+
+
+      // public function add_product(Request $request)
+      // {
+      //      if($request->hasfile('attachment'))
+      //           {
+
+      //              foreach($request->file('attachment') as $image)
+      //              {
+      //                  $name=$image->getClientOriginalName();
+
+      //                  $image->move(public_path().'/all_product_images/', $name);
+      //                  $data[] = $name;
+      //                 $dat['image']= implode("//", $data);
+
+      //              }
+      //             Db::table('image')->insert($dat);
+      //           }
+      // }
+
 
 
     public function delete_product($id)
@@ -133,22 +164,25 @@ class ProductController extends Controller
 
 
 
-    public function view_product()
+    public function view_product(Request $request)
     {
       $vendor_id=Auth::user()->id;
       $products= DB::table("products")->where("vendor_id",$vendor_id)->get();
-      foreach ($products as $value) {
+      //$image_gallery= DB::table("products")->select('image_gallery')->where("vendor_id",$vendor_id)->get();
+
+      foreach ($products as $value) 
+      {
         $category_id=$value->category;
         $sub_name=$value->sub_category;
-        
-      
-      $cat_name= DB::table("tbl_categories")->select('category_name')->where("category_id",$category_id)->get();
-       $sub_cat_name= DB::table("tbl_sub_category")->select('subcategory_name')->where("subcategory_id",$sub_name)->get();
-      // print_r($cat_name);
-      // print_r($sub_cat_name);
-      // exit();
-
+        $image_gallery=$value->image_gallery;
       }
+       $cat_name= DB::table("tbl_categories")->select('category_name')->where("category_id",$category_id)->get();
+       $sub_cat_name= DB::table("tbl_sub_category")->select('subcategory_name')->where("subcategory_id",$sub_name)->get();
+      
+       // $delimiters = Array("-");
+       // $res = explode('#@#',$image_gallery);
+
+
       return view('view_products')->with('products',$products)->with('category',$cat_name)->with('sub',$sub_cat_name);
     }
 
@@ -206,13 +240,7 @@ class ProductController extends Controller
     
     }
 
-    public function product_count()
-    {
-        $vendor_id=Auth::user()->id;
-        echo $products=DB::table('products')->where('vendor_id',$vendor_id)->count();
-        
-        return redirect('/home')->with('product_count',$products);  
-    }
+    
 
     public function add_category(Request $request)
     {

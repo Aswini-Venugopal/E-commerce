@@ -65,8 +65,10 @@ class HomeController extends Controller
     public function index()
     {
         $vendor_id = Auth::user()->id;
+        $categories=DB::table('tbl_categories')->get();
+        $products=DB::table('products')->where('vendor_id',$vendor_id)->get();
         $data=DB::table('vendor_subscription')->where('vendor_id',$vendor_id)->get();
-        return view('profile',['sub_data'=>$data]);
+        return view('profile',['sub_data'=>$data])->with('product_count',$products)->with('category',$categories);
     }
    
 
