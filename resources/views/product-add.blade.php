@@ -387,14 +387,20 @@
                             @endif
 
                         <div class="col-md-12">
-                              <label>Child Category-1</label>
+                              <label>Child Category-1</label><a href="#" title="" class="btn-st blu-clr" style="float: right;" data-toggle="modal" data-target="#myModal3">Add Child Category</a>
                                 <div id="child_cat"></div>
                             </div>
+                            @if ($errors->has('child_category'))
+                            <div class="error">{{ $errors->first('child_category') }}</div>
+                            @endif
 
                         <div class="col-md-12">
-                              <label>Child Category-2</label>
+                              <label>Child Category-2</label><a href="#" title="" class="btn-st blu-clr" style="float: right;" data-toggle="modal" data-target="#myModal4">Add Child Category-2</a>
                                 <div id="child_cat2"></div>
                             </div>
+                            @if ($errors->has('child_category2'))
+                            <div class="error">{{ $errors->first('child_category2') }}</div>
+                            @endif
 
 
 							
@@ -549,6 +555,106 @@
   </div>
 
 
+  <!-- <div class="modal fade" id="myModal3" role="dialog">
+    <div class="modal-dialog">
+    
+      
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <header class="w3-container w3-teal"> 
+          <h4 class="modal-title" style="float: left;color: teal;">Add Child-Category</h4>
+        </div>
+        <form action="{{ ('/add_sub_category') }}" role="form" method="post">    
+          {{ csrf_field() }}   
+            <div class="add-prod-from">
+                <div class="row">
+                    <div class="col-md-10">
+                        <label>Category Name</label>
+                           <select name="new_category">
+                                <option>Select Category</option>
+                                @foreach($category as $key => $value)
+                                    <option value="{{$value->category_id}}">{{$value->category_name}}</option> 
+                            @endforeach
+                              </select>
+                    </div>
+
+                     <div class="col-md-12">
+                              <label>Sub Category</label>
+                                <div id="sub_cat"></div> 
+                        </div>
+                            @if ($errors->has('sub_category'))
+                            <div class="error">{{ $errors->first('sub_category') }}</div>
+                            @endif
+                
+                </div>
+            </div>
+
+            <div class="add-prod-from">
+                <div class="row">
+                    <div class="col-md-10">
+                        <label>Sub Category Name</label>
+                            <input type="text" placeholder="Enter Sub Category Name" name="sub_category_name">
+                    </div>                 
+                </div>
+            </div>
+                <div class="modal-footer">
+                    <footer class="w3-container w3-teal">
+                        <button type="submit" class="btn btn-default" >Submit</button>
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+        </form>
+      </div>
+      
+    </div>
+  </div> -->
+
+  <!-- <div class="modal fade" id="myModal4" role="dialog">
+    <div class="modal-dialog">
+    
+     
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <header class="w3-container w3-teal"> 
+          <h4 class="modal-title" style="float: left;color: teal;">Add Second Child-category</h4>
+        </div>
+        <form action="{{ ('/add_sub_category') }}" role="form" method="post">    
+          {{ csrf_field() }}   
+            <div class="add-prod-from">
+                <div class="row">
+                    <div class="col-md-10">
+                        <label>Category Name</label>
+                           <select name="new_category">
+                                <option>Select Category</option>
+                                @foreach($category as $key => $value)
+                                    <option value="{{$value->category_id}}">{{$value->category_name}}</option> 
+                            @endforeach
+                              </select>
+                    </div>                 
+                </div>
+            </div>
+
+            <div class="add-prod-from">
+                <div class="row">
+                    <div class="col-md-10">
+                        <label>Sub Category Name</label>
+                            <input type="text" placeholder="Enter Sub Category Name" name="sub_category_name">
+                    </div>                 
+                </div>
+            </div>
+                <div class="modal-footer">
+                    <footer class="w3-container w3-teal">
+                        <button type="submit" class="btn btn-default" >Submit</button>
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+        </form>
+      </div>
+      
+    </div>
+  </div> -->
+
+
   
 </div>
            
@@ -581,7 +687,7 @@
                         
                          var data2=JSON.parse(data);
                          
-                         var toAppend = '<select name="sub_category">';
+                         var toAppend = '<select name="sub_category" value="{{ old('sub_category')}}">';
                          
                          $.each(data2, function(key, value)
                          {

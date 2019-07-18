@@ -366,6 +366,7 @@
                             <th>Price</th>
                             <th>Discount</th>
                             <th>Image</th>
+                            
                           </tr>
                         </thead>
                         <tbody>
@@ -383,6 +384,8 @@
                 <td><?php echo $value->discount;?>%</td>
                  
                 <td><img src="<?php echo $value->product_image; ?>"  style="width: 100px; height: 150px ;">
+
+                
                 	 <?php $id =  $value->id;?>
                 <td><a href="{{url('delete_product',$id)}}" title=""><i class="icon-trash"></i></a>
 				<a href="{{url('edit_product',$id)}}" title=""><i class="icon-pencil"></i></a></td>

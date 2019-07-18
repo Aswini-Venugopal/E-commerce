@@ -447,27 +447,28 @@
                 <div class="info-section">
                                         <div class="panel-widget">
 											<div class="mini-stats">
-												<p>Bitcoin Wallet</p>
+												<p>Products</p>
 												<span><i class="fa fa-ellipsis-v"></i></span>
-												<h3>$2,501</h3>
-												<em>Ratings by Market Capitalization</em>
+												
+												<h3>{{count($product_count)}}</h3>
+												<a href="{{ url('view_product')}}" style="color: white;"><em>Total Products <i class="fa fa-arrow-right"></i></em></a>
 												<i class="fa fa-bitcoin"></i> 
 											</div>
                                         </div>
 
                                         <div class="panel-widget">
                                             <div class="mini-stats purpal-grdnt">
-                                                <p>Bitcoin Wallet</p>
+                                                <p>Categories</p>
                                                 <span><i class="fa fa-ellipsis-v"></i></span>
-                                                <h3>$7,101</h3>
-												<em>Ratings by Market Capitalization</em>
+                                                <h3>{{count($category)}}</h3>
+												<em>Total Categories</em>
                                                 <i class="fa fa-dollar"></i> 
 											</div>
                                         </div>
 
                                         <div class="panel-widget">
                                             <div class="mini-stats blue-grdnt">
-                                                <p>Bitcoin Wallet</p>
+                                                <p>Customers</p>
                                                 <span><i class="fa fa-ellipsis-v"></i></span>
                                                 <h3>$9,102</h3>
 												<em>Ratings by Market Capitalization</em>
